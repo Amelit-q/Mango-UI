@@ -1,7 +1,5 @@
-﻿import React from "react"
+﻿import React from "react";
 
 export const Profile = () => {
-    return (
-        <div>This is the Profile Page</div>
-    )
-}
+  return <div>This is the Profile Page</div>;
+};
