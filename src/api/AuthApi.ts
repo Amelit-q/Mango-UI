@@ -1,8 +1,8 @@
 ﻿import axios, {AxiosInstance} from "axios";
+import {ApiRoute, AuthRoutes} from "../consts/Routes";
 
-export class RegistrationApi {
-    private _endpoint = "/api/auth/register"
-    private _baseUrl = "https://mango-messenger-app.herokuapp.com"
+export class AuthApi {
+
     protected headers: {
         "Content-type": "application/json"
     }
@@ -10,13 +10,13 @@ export class RegistrationApi {
     protected apiConnector: AxiosInstance
 
     public constructor() {
-        this.apiConnector = axios.create({headers: {}, baseURL: this._baseUrl})
+        this.apiConnector = axios.create({headers: {}, baseURL: ApiRoute.apiDomain})
     }
 
-    public async registration(data: any) {
+    public async register(data: any) {
         try {
             const res: { data: any } = await this.apiConnector.post(
-                this._endpoint, data, {headers: this.headers}
+                AuthRoutes.postRegister, data, {headers: this.headers}
             )
             return Promise.resolve(res.data)
 
@@ -24,4 +24,23 @@ export class RegistrationApi {
             return Promise.reject(error)
         }
     }
+
+    public async login(data: any) {
+    }
+
+    public async verifyEmail(data: any) {
+    }
+
+    public async verifyPhone(data: any) {
+    }
+
+    public async refreshToken(data: any) {
+    }
+
+    public async logout(data: any) {
+    }
+
+    public async logoutAll(data: any) {
+    }
+
 }

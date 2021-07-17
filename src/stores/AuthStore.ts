@@ -1,9 +1,9 @@
 ﻿import {observable} from "mobx";
-import {RegistrationApi} from "../api/AuthApi";
+import {AuthApi} from "../api/AuthApi";
 
 export class AuthStore {
 
-    private registrationApi = new RegistrationApi()
+    private registrationApi = new AuthApi()
 
 
     @observable
