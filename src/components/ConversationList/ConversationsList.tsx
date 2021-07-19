@@ -11,7 +11,7 @@ export const ConversationsList = (props: any) => {
     const [conversations, setConversations] = useState([])
     useEffect(() => {
         getConversations()
-    }, [])
+    })
 
     const getConversations = () => {
         axios.get("https://randomuser.me/api/?results=20").then((response) => {

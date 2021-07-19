@@ -14,7 +14,7 @@ export const MessageList = (props: any) => {
 
     useEffect(() => {
         getMessages()
-    }, [])
+    })
 
     const getMessages = () => {
         var tempMessages = [
