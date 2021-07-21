@@ -26,7 +26,18 @@ export class AuthApi {
         }
     }
 
-    public async login(data: any) {
+    public async login(email: string, password: string) {
+
+        try {
+            const res: {data: string} = await this.apiConnector.post(AuthRoutes.postLogin, {
+                "email": email,
+                "password": password,
+            }, {headers: this.headers})
+            return Promise.resolve(res.data)
+        } catch (error) {
+            return Promise.reject(error)
+        }
+
     }
 
     public async verifyEmail(data: any) {
@@ -35,7 +46,14 @@ export class AuthApi {
     public async verifyPhone(data: any) {
     }
 
-    public async refreshToken(data: any) {
+    public async refreshToken(refreshToken: string) {
+        try {
+            const res: {data: string} = await this.apiConnector.post(AuthRoutes.postRefreshToken, {"refreshTokenId": refreshToken}, {headers: this.headers})
+            return Promise.resolve()
+        } catch (error) {
+            return Promise.reject(error)
+
+        }
     }
 
     public async logout(data: any) {
