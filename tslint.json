@@ -62,8 +62,6 @@
       "allow-null-check"
     ],
     "trailing-comma": {
-      "multiline": "always",
-      "singleline": "never"
     },
     "variable-name": false,
     "whitespace": [

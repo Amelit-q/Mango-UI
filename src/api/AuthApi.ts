@@ -1,40 +1,85 @@
 ﻿import axios, {AxiosInstance} from "axios"
 import {ApiRoute, AuthRoutes} from "../consts/Routes"
+import {RegisterCommand} from "../types/Auth/Requests/RegisterCommand"
+import {LoginCommand} from "../types/Auth/Requests/LoginCommand"
+import {RefreshTokenCommand} from "../types/Auth/Requests/RefreshTokenCommand"
+
 
 export class AuthApi {
 
-    // @ts-ignore
     protected headers: {
-        "Content-type": "application/json"
+        "Content-Type": "application/json",
+    } = {
+        "Content-Type": "application/json",
     }
 
     protected apiConnector: AxiosInstance
 
     public constructor() {
-        this.apiConnector = axios.create({headers: {}, baseURL: ApiRoute.apiDomain})
+        this.apiConnector = axios.create({headers: this.headers, baseURL: ApiRoute.apiDomain})
     }
 
-    public async register(data: any) {
+    public async register(data: RegisterCommand) {
         try {
             const res: {data: any} = await this.apiConnector.post(
-                AuthRoutes.postRegister, data, {headers: this.headers},
+                AuthRoutes.postRegister, {
+                    "phoneNumber": data.phoneNumber,
+                    "email": data.email,
+                    "displayName": data.displayName,
+                    "password": data.password,
+                    "verificationMethod": data.verificationMethod,
+                    "termsAccepted": data.termsAccepted,
+                }, {headers: this.headers},
             )
             return Promise.resolve(res.data)
 
         } catch (error) {
+            if (error && error.response) {
+                let errorText = ""
+                switch (error.response.status) {
+                    case 401:
+                        errorText = "Wrong login or password"
+                        break
+                    case 403:
+                        errorText = "Access denied"
+                        break
+                    default:
+                        errorText = error.response.status
+                        break
+                }
+                console.log("One of the Error messages from Register Request: ", errorText)
+
+            }
+
             return Promise.reject(error)
         }
     }
 
-    public async login(email: string, password: string) {
+    public async login(data: LoginCommand) {
 
         try {
             const res: {data: string} = await this.apiConnector.post(AuthRoutes.postLogin, {
-                "email": email,
-                "password": password,
+                "email": data.email,
+                "password": data.password,
             }, {headers: this.headers})
             return Promise.resolve(res.data)
         } catch (error) {
+            if (error && error.response) {
+                let errorText = ""
+                switch (error.response.status) {
+                    case 401:
+                        errorText = "Wrong login or password"
+                        break
+                    case 403:
+                        errorText = "Access denied"
+                        break
+                    default:
+                        errorText = error.response.status
+                        break
+                }
+                console.log("One of the Error messages from Register Request: ", errorText)
+
+            }
             return Promise.reject(error)
         }
 
@@ -46,11 +91,27 @@ export class AuthApi {
     public async verifyPhone(data: any) {
     }
 
-    public async refreshToken(refreshToken: string) {
+    public async refreshToken(data: RefreshTokenCommand) {
         try {
-            const res: {data: string} = await this.apiConnector.post(AuthRoutes.postRefreshToken, {"refreshTokenId": refreshToken}, {headers: this.headers})
+            const res: {data: string} = await this.apiConnector.post(AuthRoutes.postRefreshToken, {"refreshTokenId": data.refreshTokenId}, {headers: this.headers})
             return Promise.resolve()
         } catch (error) {
+            if (error && error.response) {
+                let errorText = ""
+                switch (error.response.status) {
+                    case 401:
+                        errorText = "Wrong login or password"
+                        break
+                    case 403:
+                        errorText = "Access denied"
+                        break
+                    default:
+                        errorText = error.response.status
+                        break
+                }
+                console.log("One of the Error messages from Register Request: ", errorText)
+
+            }
             return Promise.reject(error)
 
         }
