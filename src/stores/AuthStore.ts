@@ -14,13 +14,13 @@ export class AuthStore {
     private _isLogged: boolean = false
 
 
-    public async registration(data: RegisterCommand) {
-        try {
-            const res = await this.registrationApi.register(data)
-        } catch (error) {
-            return Promise.reject(error)
-        }
-    }
+    // public async registration(data: RegisterCommand) {
+    //     try {
+    //         const res = await this.registrationApi.register(data)
+    //     } catch (error) {
+    //         return Promise.reject(error)
+    //     }
+    // }
 
     public constructor() {
         makeAutoObservable(this)

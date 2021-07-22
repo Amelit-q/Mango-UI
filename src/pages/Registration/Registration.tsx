@@ -1,11 +1,11 @@
 import React from "react"
 import {observer} from "mobx-react-lite"
-import {AuthStore} from "../../stores/AuthStore"
+// import {AuthStore} from "../../stores/AuthStore"
 
 
 export const Registration = observer(() => {
 
-    const authStore = new AuthStore()
+    // const authStore = new AuthStore()
 
 
     const [phoneNumber, setPhoneNumber] = React.useState("")
