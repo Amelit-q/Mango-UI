@@ -1,4 +1,4 @@
-﻿import axios, {AxiosInstance} from "axios"
+import axios, {AxiosInstance} from "axios"
 import {ApiRoute, AuthRoutes} from "../consts/Routes"
 import {RegisterCommand} from "../types/Auth/Requests/RegisterCommand"
 import {LoginCommand} from "../types/Auth/Requests/LoginCommand"
@@ -58,7 +58,7 @@ export class AuthApi {
     public async login(data: LoginCommand) {
 
         try {
-            const res: {data: string} = await this.apiConnector.post(AuthRoutes.postLogin, {
+            const res: {data: LoginCommand} = await this.apiConnector.post(AuthRoutes.postLogin, {
                 "email": data.email,
                 "password": data.password,
             }, {headers: this.headers})

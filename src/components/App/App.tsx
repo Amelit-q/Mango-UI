@@ -1,7 +1,7 @@
 import React from "react"
 import {BrowserRouter, Route, Switch} from "react-router-dom"
-import {Registration} from "../pages/Registration/Registration"
 import {Messenger} from "../Messenger/Messenger"
+import {Registration} from "../../pages/Registration/Registration"
 
 export default function App() {
     return (

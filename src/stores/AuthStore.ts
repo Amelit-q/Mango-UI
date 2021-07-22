@@ -1,4 +1,4 @@
-﻿import {observable} from "mobx"
+import {makeAutoObservable, observable} from "mobx"
 import {AuthApi} from "../api/AuthApi"
 import {RegisterCommand} from "../types/Auth/Requests/RegisterCommand"
 
@@ -20,6 +20,11 @@ export class AuthStore {
         } catch (error) {
             return Promise.reject(error)
         }
+    }
+
+    public constructor() {
+        makeAutoObservable(this)
+
     }
 
 

@@ -1,7 +1,13 @@
 import React from "react"
 import {observer} from "mobx-react-lite"
+import {AuthStore} from "../../stores/AuthStore"
+
 
 export const Registration = observer(() => {
+
+    const authStore = new AuthStore()
+
+
     const [phoneNumber, setPhoneNumber] = React.useState("")
     const [email, setEmail] = React.useState("")
     const [name, setName] = React.useState("")
@@ -9,12 +15,17 @@ export const Registration = observer(() => {
     // const [input, setInput] = React.useState("")
     // const [input, setInput] = React.useState("")
     const [registrationFormFields, setRegistrationFormFields] = React.useState([])
+    // console.log(registrationFormFields, "form fields")
 
 
     const handleFormSubmit = (event: any) => {
         event.preventDefault()
+
         // @ts-ignore
         setRegistrationFormFields([...registrationFormFields, phoneNumber, email, name, password])
+        // authStore.registration(registrationFormFields)
+
+        // console.log(email, name, password, "inside form")
     }
 
 
@@ -41,7 +52,7 @@ export const Registration = observer(() => {
                 <input type="text" value={password} onChange={event => setPassword(event.target.value)}
                        placeholder={"Enter your E-MAIL"} />
             </label>
-            <input type="submit" />
+            <input type="submit" value="submit" />
 
         </form>
     )
