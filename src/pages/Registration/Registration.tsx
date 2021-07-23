@@ -1,29 +1,36 @@
 import React from "react"
 import {observer} from "mobx-react-lite"
-// import {AuthStore} from "../../stores/AuthStore"
+import {AuthStore} from "../../stores/AuthStore"
+import axios from "axios"
 
 
 export const Registration = observer(() => {
 
-    // const authStore = new AuthStore()
+    const authStore = new AuthStore()
 
 
     const [phoneNumber, setPhoneNumber] = React.useState("")
     const [email, setEmail] = React.useState("")
     const [name, setName] = React.useState("")
     const [password, setPassword] = React.useState("")
-    // const [input, setInput] = React.useState("")
-    // const [input, setInput] = React.useState("")
     const [registrationFormFields, setRegistrationFormFields] = React.useState([])
-    // console.log(registrationFormFields, "form fields")
 
 
     const handleFormSubmit = (event: any) => {
         event.preventDefault()
+        // console.log(event)
+        // @ts-ignore
+        setRegistrationFormFields([...registrationFormFields, phoneNumber, name, password, email])
+
+        // let data: RegisterCommand = JSON.stringify(registrationFormFields)
+        // console.log(data, "this is the data")
+        console.log(registrationFormFields, "fields")
 
         // @ts-ignore
-        setRegistrationFormFields([...registrationFormFields, phoneNumber, email, name, password])
-        // authStore.registration(registrationFormFields)
+        // setRegistrationFormFields([...registrationFormFields, phoneNumber, email, name, password])
+        // console.log(registrationFormFields, "fields inside registration")
+
+        authStore.registration(phoneNumber, email, name, password)
 
         // console.log(email, name, password, "inside form")
     }

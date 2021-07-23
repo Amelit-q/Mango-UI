@@ -3,6 +3,7 @@ import {ApiRoute, AuthRoutes} from "../consts/Routes"
 import {RegisterCommand} from "../types/Auth/Requests/RegisterCommand"
 import {LoginCommand} from "../types/Auth/Requests/LoginCommand"
 import {RefreshTokenCommand} from "../types/Auth/Requests/RefreshTokenCommand"
+import {config} from "../config"
 
 
 export class AuthApi {
@@ -13,16 +14,19 @@ export class AuthApi {
         "Content-Type": "application/json",
     }
 
+    private ENDPOINT = "/api/auth/register"
+
     protected apiConnector: AxiosInstance
 
     public constructor() {
-        this.apiConnector = axios.create({headers: this.headers, baseURL: ApiRoute.apiDomain})
+        this.apiConnector = axios.create({headers: this.headers, baseURL: config.apiServiceHost})
     }
+
 
     public async register(data: RegisterCommand) {
         try {
             const res: {data: any} = await this.apiConnector.post(
-                AuthRoutes.postRegister, {
+                this.ENDPOINT, {
                     "phoneNumber": data.phoneNumber,
                     "email": data.email,
                     "displayName": data.displayName,
