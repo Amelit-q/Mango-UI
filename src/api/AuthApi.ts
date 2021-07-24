@@ -19,6 +19,7 @@ export class AuthApi {
 
     public async register(data: RegisterCommand) {
         try {
+            // @ts-ignore
             const res: {data: string} = await this.apiConnector.post(
                 AuthRoutes.postRegister,
                 {
@@ -31,6 +32,7 @@ export class AuthApi {
                 },
                 {headers: this.headers}
             )
+
             return Promise.resolve(res.data)
         } catch (error) {
             if (error && error.response) {
@@ -90,7 +92,9 @@ export class AuthApi {
 
     public async refreshToken(data: RefreshTokenCommand) {
         try {
+            // eslint-disable-next-line
             const res: {data: string} = await this.apiConnector.post(AuthRoutes.postRefreshToken, {refreshTokenId: data.refreshTokenId}, {headers: this.headers})
+
             return Promise.resolve()
         } catch (error) {
             if (error && error.response) {

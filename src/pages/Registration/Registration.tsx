@@ -1,7 +1,6 @@
 import React from "react"
 import {observer} from "mobx-react-lite"
 import {AuthStore} from "../../stores/AuthStore"
-import axios from "axios"
 import {RegisterCommand} from "../../types/Auth/Requests/RegisterCommand"
 
 export const Registration = observer(() => {
@@ -19,7 +18,7 @@ export const Registration = observer(() => {
         // @ts-ignore
         setRegistrationFormFields([...registrationFormFields, phoneNumber, name, password, email])
 
-        // authStore.registration(new RegisterCommand(phoneNumber, email, name, password))
+        authStore.registration(new RegisterCommand(phoneNumber, email, name, password, 1, true))
 
         // console.log(email, name, password, "inside form")
     }
@@ -45,7 +44,7 @@ export const Registration = observer(() => {
             </label>
             <label>
                 {/* <input type="checkbox" defaultChecked={termsAccepted}  value="1234"/> */}
-                
+
                 check me!
             </label>
             <input type="submit" value="submit" />

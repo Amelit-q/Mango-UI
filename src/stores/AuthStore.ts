@@ -19,6 +19,7 @@ export class AuthStore {
     public async registration(data: RegisterCommand) {
         try {
             const res = await this.registrationApi.register(data)
+            return res
         } catch (error) {
             return Promise.reject(error)
         }
