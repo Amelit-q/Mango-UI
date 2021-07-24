@@ -2,8 +2,9 @@ import React from "react"
 import {observer} from "mobx-react-lite"
 import {AuthStore} from "../../stores/AuthStore"
 import {RegisterCommand} from "../../types/Auth/Requests/RegisterCommand"
+import styled from "styled-components"
 
-export const Registration = observer(() => {
+export const Registration: React.FunctionComponent = observer(() => {
     const authStore = new AuthStore()
 
     const [phoneNumber, setPhoneNumber] = React.useState("")
@@ -18,7 +19,7 @@ export const Registration = observer(() => {
     }
 
     return (
-        <form onSubmit={handleFormSubmit}>
+        <FormContainer onSubmit={handleFormSubmit}>
             <label>
                 Phone Number:
                 <input type="text" value={phoneNumber} onChange={(event) => setPhoneNumber(event.target.value)} placeholder={"Enter your phone number"} />
@@ -43,6 +44,14 @@ export const Registration = observer(() => {
             </label>
             <input type="submit" value="submit" />
             <input type="checkbox" id="topping" name="topping" value="Paneer" checked={termsAccepted} onChange={() => setTermsAccepted(true)} />
-        </form>
+        </FormContainer>
     )
 })
+
+const FormContainer = styled("form")`
+    background-color: #FFA07A;
+    display: flex;
+    flex-direction: column;
+`
+
+
