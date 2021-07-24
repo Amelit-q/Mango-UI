@@ -10,17 +10,11 @@ export const Registration = observer(() => {
     const [email, setEmail] = React.useState("")
     const [name, setName] = React.useState("")
     const [password, setPassword] = React.useState("")
-    const [registrationFormFields, setRegistrationFormFields] = React.useState([])
     const [termsAccepted, setTermsAccepted] = React.useState(false)
 
     const handleFormSubmit = (event: any) => {
         event.preventDefault()
-        // @ts-ignore
-        setRegistrationFormFields([...registrationFormFields, phoneNumber, name, password, email])
-
         authStore.registration(new RegisterCommand(phoneNumber, email, name, password, 1, true))
-
-        // console.log(email, name, password, "inside form")
     }
 
     return (
