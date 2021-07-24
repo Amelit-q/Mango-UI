@@ -1,4 +1,4 @@
-﻿import {VerificationMethod} from "../Enums/VerificationMethod";
+import {VerificationMethod} from "../Enums/VerificationMethod";
 
 export class RegisterCommand {
   phoneNumber: string;
