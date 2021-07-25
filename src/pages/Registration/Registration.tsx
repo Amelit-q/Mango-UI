@@ -29,28 +29,28 @@ export const Registration: React.FunctionComponent = observer(() => {
                 <InputFormWrapper>
                     <label>
                         Phone Number:
-                        <input type="text" value={phoneNumber} onChange={(event) => setPhoneNumber(event.target.value)} placeholder={"Enter your phone number"} />
+                        <InputWrapper type="text" value={phoneNumber} onChange={(event) => setPhoneNumber(event.target.value)} placeholder={"Enter your phone number"} />
                     </label>
                 </InputFormWrapper>
 
                 <InputFormWrapper>
                     <label>
                         Email:
-                        <input type="text" value={email} onChange={(event) => setEmail(event.target.value)} placeholder={"Enter your E-MAIL"} />
+                        <InputWrapper type="text" value={email} onChange={(event) => setEmail(event.target.value)} placeholder={"Enter your E-MAIL"} />
                     </label>
                 </InputFormWrapper>
 
                 <InputFormWrapper>
                     <label>
                         Name:
-                        <input type="text" value={name} onChange={(event) => setName(event.target.value)} placeholder={"Enter your name"} />
+                        <InputWrapper type="text" value={name} onChange={(event) => setName(event.target.value)} placeholder={"Enter your name"} />
                     </label>
                 </InputFormWrapper>
 
                 <InputFormWrapper>
                     <label>
                         Password:
-                        <input type="text" value={password} onChange={(event) => setPassword(event.target.value)} placeholder={"Enter your E-MAIL"} />
+                        <InputWrapper type="text" value={password} onChange={(event) => setPassword(event.target.value)} placeholder={"Enter your E-MAIL"} />
                     </label>
                 </InputFormWrapper>
 
@@ -89,17 +89,35 @@ const FormContainer = styled("form")`
 `
 
 const FormWrapper = styled("div")`
-    
-`
-
-const InputFormWrapper = styled("div")`
     width: 400px;
     padding: 40px;
     background: rgba(0,0,0,.5);
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
+`
+
+const InputFormWrapper = styled("div")`
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  outline: none;
+  background: transparent;
     
+`
+const InputWrapper = styled("input")`
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
 `
 
 
