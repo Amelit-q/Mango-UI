@@ -30,7 +30,7 @@ export class AuthApi {
                     verificationMethod: data.verificationMethod,
                     termsAccepted: data.termsAccepted,
                 },
-                {headers: this.headers}
+                {headers: this.headers},
             )
 
             return Promise.resolve(res.data)
@@ -63,7 +63,7 @@ export class AuthApi {
                     email: data.email,
                     password: data.password,
                 },
-                {headers: this.headers}
+                {headers: this.headers},
             )
             return Promise.resolve(res.data)
         } catch (error) {
@@ -86,9 +86,11 @@ export class AuthApi {
         }
     }
 
-    public async verifyEmail(data: any) {}
+    public async verifyEmail(data: any) {
+    }
 
-    public async verifyPhone(data: any) {}
+    public async verifyPhone(data: any) {
+    }
 
     public async refreshToken(data: RefreshTokenCommand) {
         try {
@@ -116,7 +118,9 @@ export class AuthApi {
         }
     }
 
-    public async logout(data: any) {}
+    public async logout(data: any) {
+    }
 
-    public async logoutAll(data: any) {}
+    public async logoutAll(data: any) {
+    }
 }
