@@ -6,9 +6,6 @@ export class AuthStore {
 
     private registrationApi = new AuthApi()
 
-
-
-
     @observable
     private _login: String | null = null
 
@@ -18,8 +15,8 @@ export class AuthStore {
 
     public async registration(data: RegisterCommand) {
         try {
-            const res = await this.registrationApi.register(data)
-            return res
+            const {message, success, userId} = await this.registrationApi.register(data)
+            return Promise.resolve()
         } catch (error) {
             return Promise.reject(error)
         }
