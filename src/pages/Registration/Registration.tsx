@@ -15,12 +15,10 @@ export const Registration: React.FunctionComponent = observer(() => {
     const [password, setPassword] = React.useState("")
     const [termsAccepted, setTermsAccepted] = React.useState(true)
     const [verificationMethod, setVerificationMethod] = React.useState<VerificationMethod>(1)
-    console.log(verificationMethod, "verification method")
 
     const handleFormSubmit = (event: any) => {
         event.preventDefault()
         setTermsAccepted(true)
-        console.log(verificationMethod, "this is the value of verification method: 1 means by telephone, 2 means by e-mail")
         authStore.registration(new RegisterCommand(phoneNumber, email, name, password, verificationMethod, termsAccepted))
     }
 
