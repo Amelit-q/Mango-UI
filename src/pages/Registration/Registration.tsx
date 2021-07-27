@@ -20,6 +20,7 @@ export const Registration: React.FunctionComponent = observer(() => {
         event.preventDefault()
         setTermsAccepted(true)
         authStore.registration(new RegisterCommand(phoneNumber, email, name, password, verificationMethod, termsAccepted))
+
     }
 
     const handleSelectChange = (event: any) => {
@@ -30,6 +31,7 @@ export const Registration: React.FunctionComponent = observer(() => {
         }
 
     }
+
 
     return (
 
@@ -45,7 +47,7 @@ export const Registration: React.FunctionComponent = observer(() => {
                 <InputFormWrapper>
                     <label>
                         Email:
-                        <InputWrapper type="text" value={email} onChange={(event) => setEmail(event.target.value)} placeholder={"Enter your E-MAIL"} />
+                        <InputWrapper type="e-mail" value={email} onChange={(event) => setEmail(event.target.value)} placeholder={"Enter your E-MAIL"} />
                     </label>
                 </InputFormWrapper>
 
@@ -59,7 +61,7 @@ export const Registration: React.FunctionComponent = observer(() => {
                 <InputFormWrapper>
                     <label>
                         Password:
-                        <InputWrapper type="text" value={password} onChange={(event) => setPassword(event.target.value)} placeholder={"Enter your E-MAIL"} />
+                        <InputWrapper type="password" value={password} onChange={(event) => setPassword(event.target.value)} placeholder={"Enter your password"} />
                     </label>
                 </InputFormWrapper>
 
@@ -89,16 +91,19 @@ export const Registration: React.FunctionComponent = observer(() => {
 })
 
 
-const FormContainer = styled("form")`
+const FormContainer = styled("div")`
     height: 100vh;
     width: 100vw;
     font-family: 'Open Sans',sans-serif;
     color: #fff;
     background: linear-gradient(#141e30, #243b55);    
+    display: flex;
+    justify-content: center;
 `
 
-const FormWrapper = styled("div")`
+const FormWrapper = styled("form")`
     width: 400px;
+    height: fit-content;
     padding: 40px;
     background: rgba(0,0,0,.5);
     box-sizing: border-box;
@@ -106,8 +111,6 @@ const FormWrapper = styled("div")`
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    
 `
 
 const InputFormWrapper = styled("div")`
