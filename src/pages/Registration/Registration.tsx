@@ -66,13 +66,13 @@ export const Registration: React.FunctionComponent = observer(() => {
                 </InputFormWrapper>
 
 
-                <label>
+                <label style={{margin: "0 0 15px 0"}}>
                     Authorization method:
 
-                    <select onChange={handleSelectChange}>
+                    <SelectWrapper onChange={handleSelectChange}>
                         <option value="phone">Phone number</option>
                         <option value="email">E-Mail</option>
-                    </select>
+                    </SelectWrapper>
 
                 </label>
 
@@ -157,4 +157,12 @@ const SubmitButton = styled("input")`
     border-radius: 5px;
     }
     
+`
+
+const SelectWrapper = styled("select")`
+    padding: 5px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #ddd;
 `
