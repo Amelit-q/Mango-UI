@@ -3,6 +3,7 @@ import {ApiRoute, AuthRoutes} from "../consts/Routes"
 import {RegisterCommand} from "../types/Auth/Requests/RegisterCommand"
 import {LoginCommand} from "../types/Auth/Requests/LoginCommand"
 import {RefreshTokenCommand} from "../types/Auth/Requests/RefreshTokenCommand"
+import {VerifyEmailCommand} from "../types/Auth/Requests/VerifyEmailCommand"
 
 export class AuthApi {
     protected headers: {
@@ -57,7 +58,7 @@ export class AuthApi {
 
     public async login(data: LoginCommand) {
         try {
-            const res: {data: LoginCommand} = await this.apiConnector.post(
+            const res: {data: string} = await this.apiConnector.post(
                 AuthRoutes.postLogin,
                 {
                     email: data.email,
@@ -86,7 +87,33 @@ export class AuthApi {
         }
     }
 
-    public async verifyEmail(data: any) {
+    public async verifyEmail(data: VerifyEmailCommand) {
+
+        try {
+            const res: {data: string} = await this.apiConnector.post(AuthRoutes.verifyEmail, {email: data.email, userId: data.userId}, {headers: this.headers})
+            return Promise.resolve(res.data)
+        } catch (error) {
+
+            if (error && error.response) {
+                let errorText = ""
+                switch (error.response.status) {
+                    case 401:
+                        errorText = "Wrong login or password"
+                        break
+                    case 403:
+                        errorText = "Access denied"
+                        break
+                    default:
+                        errorText = error.response.status
+                        break
+                }
+                console.log("One of the Error messages from Register Request: ", errorText)
+            }
+
+            return Promise.reject(error)
+        }
+
+
     }
 
     public async verifyPhone(data: any) {

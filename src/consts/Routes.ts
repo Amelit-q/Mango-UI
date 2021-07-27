@@ -7,6 +7,7 @@ export class AuthRoutes {
     static postLogin = "/api/auth/login"
     static postRefreshToken = "/api/auth/refresh-token"
     static getVerifyPhone = "/api/auth/verify-phone"
+    static verifyEmail = "/api/auth/verify-email"
 }
 
 export class ChatsRoutes {

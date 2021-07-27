@@ -37,12 +37,23 @@ export class AuthStore {
 
     public async registration(data: RegisterCommand) {
         try {
-            //@ts-ignore
+
+            // @ts-ignore
             const {message, success, userId} = await this.registrationApi.register(data)
             this.setMessage(message)
             this.setSuccess(success)
             this.setUserId(userId)
             return Promise.resolve()
+        } catch (error) {
+            return Promise.reject(error)
+        }
+    }
+
+    public async verifyEmail() {
+        try {
+
+            return Promise.resolve()
+
         } catch (error) {
             return Promise.reject(error)
         }
