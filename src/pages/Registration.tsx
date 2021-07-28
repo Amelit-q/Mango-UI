@@ -1,9 +1,11 @@
 import React from "react"
 import {observer} from "mobx-react-lite"
-import {AuthStore} from "../../stores/AuthStore"
+
 import styled from "styled-components"
-import {VerificationMethod} from "../../types/Auth/Enums/VerificationMethod"
-import {RegisterCommand} from "../../types/Auth/Requests/RegisterCommand"
+import {VerificationMethod} from "../types/Auth/Enums/VerificationMethod"
+import {RegisterCommand} from "../types/Auth/Requests/RegisterCommand"
+import {AuthStore} from "../stores/AuthStore"
+
 
 export const Registration: React.FunctionComponent = observer(() => {
     const authStore = new AuthStore()
