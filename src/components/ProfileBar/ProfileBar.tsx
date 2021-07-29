@@ -8,24 +8,37 @@ export const Navbar = () => {
 
     const handleLoginButtonClick = (event: any) => {
         setRegisterPopupVisible(true)
+
     }
 
 
-    return <Container>
-        <button onClick={handleLoginButtonClick}>Login</button>
-        {registerPopupVisible && <LoginForm />}
-        <div>asdfsadf</div>
-        <div>asdfsadf</div>
-        <div>asdfsadf</div>
-        <div>asdfsadf</div>
-        <div>asdfsadf</div>
-        <div>asdfsadf</div>
-        <div>asdfsadf</div>
-    </Container>
+    return (
+        <Container>
+            <button onClick={handleLoginButtonClick} onDoubleClick={() => {
+                setRegisterPopupVisible(false)
+            }}>Login
+            </button>
+            <LoginWrapper>
+                {registerPopupVisible && <LoginForm />}
+            </LoginWrapper>
+            <div>asdfsadf</div>
+            <div>asdfsadf</div>
+            <div>asdfsadf</div>
+            <div>asdfsadf</div>
+            <div>asdfsadf</div>
+            <div>asdfsadf</div>
+            <div>asdfsadf</div>
+        </Container>
+    )
 
 }
 
 const Container = styled("div")`
-display: flex;
-flex-direction: column;
+    display: flex;
+    flex-direction: column;
+`
+const LoginWrapper = styled("div")`
+    display: flex;
+    justify-content: center;
+    
 `

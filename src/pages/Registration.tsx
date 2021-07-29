@@ -1,4 +1,4 @@
-import React from "react"
+import * as React from "react"
 import {observer} from "mobx-react-lite"
 
 import styled from "styled-components"
@@ -103,7 +103,7 @@ const FormContainer = styled("div")`
     justify-content: center;
 `
 
-const FormWrapper = styled("form")`
+export const FormWrapper = styled("form")`
     width: 400px;
     height: fit-content;
     padding: 40px;
@@ -115,7 +115,7 @@ const FormWrapper = styled("form")`
     flex-direction: column;
 `
 
-const InputFormWrapper = styled("div")`
+export const InputFormWrapper = styled("div")`
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
@@ -126,7 +126,7 @@ const InputFormWrapper = styled("div")`
   background: transparent;
     
 `
-const InputWrapper = styled("input")`
+export const InputWrapper = styled("input")`
   width: 100%;
   padding: 10px 0;
   font-size: 16px;

@@ -1,6 +1,8 @@
 import {action, makeAutoObservable, observable} from "mobx"
 import {AuthApi} from "../api/AuthApi"
 import {RegisterCommand} from "../types/Auth/Requests/RegisterCommand"
+import {LoginCommand} from "../types/Auth/Requests/LoginCommand"
+import {ILoginResponse} from "../types/Auth/Responses/ILoginResponse"
 
 export class AuthStore {
     private registrationApi = new AuthApi()
@@ -58,6 +60,20 @@ export class AuthStore {
             return Promise.reject(error)
         }
     }
+
+    public async login(data: LoginCommand) {
+
+        try {
+            // @ts-ignore
+            const res: ILoginResponse = await this.registrationApi.login(data)
+            console.log(res, "response data")
+            return Promise.resolve()
+        } catch (error) {
+            return Promise.reject(error)
+        }
+
+    }
+
 
     public constructor() {
         makeAutoObservable(this)
