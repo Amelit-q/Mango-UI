@@ -12,6 +12,7 @@ export class AuthApi {
         "Content-Type": "application/json",
     }
 
+
     protected apiConnector: AxiosInstance
 
     public constructor() {

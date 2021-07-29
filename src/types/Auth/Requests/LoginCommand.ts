@@ -1,4 +1,4 @@
-﻿export class LoginCommand {
+export class LoginCommand {
     email: string
     password: string
 
