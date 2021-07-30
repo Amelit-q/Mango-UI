@@ -1,4 +1,10 @@
-﻿import {IBaseResponse} from "../../IBaseResponse";
+﻿import {VerificationMethod} from "../Enums/VerificationMethod"
 
-export interface IRegisterResponse extends IBaseResponse {
+export interface IRegisterResponse {
+    "phoneNumber": "string",
+    "email": "string",
+    "displayName": "string",
+    "password": "string",
+    "verificationMethod": VerificationMethod,
+    "termsAccepted": boolean
 }

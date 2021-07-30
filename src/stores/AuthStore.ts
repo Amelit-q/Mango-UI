@@ -3,6 +3,8 @@ import {AuthApi} from "../api/AuthApi"
 import {RegisterCommand} from "../types/Auth/Requests/RegisterCommand"
 import {LoginCommand} from "../types/Auth/Requests/LoginCommand"
 import {ILoginResponse} from "../types/Auth/Responses/ILoginResponse"
+import {VerifyEmailCommand} from "../types/Auth/Requests/VerifyEmailCommand"
+import {IBaseResponse} from "../types/IBaseResponse"
 
 export class AuthStore {
     private registrationApi = new AuthApi()
@@ -40,6 +42,7 @@ export class AuthStore {
     public async registration(data: RegisterCommand) {
         try {
 
+            //TODO: EXPORT TYPES FOR THIS RESPONSE
             // @ts-ignore
             const {message, success, userId} = await this.registrationApi.register(data)
             this.setMessage(message)
@@ -51,8 +54,10 @@ export class AuthStore {
         }
     }
 
-    public async verifyEmail() {
+    public async verifyEmail(data: VerifyEmailCommand) {
         try {
+            const res: IBaseResponse = await this.registrationApi.verifyEmail(data)
+            this.setMessage(res.message)
 
             return Promise.resolve()
 
@@ -66,7 +71,6 @@ export class AuthStore {
         try {
             // @ts-ignore
             const res: ILoginResponse = await this.registrationApi.login(data)
-            console.log(res, "response data")
             return Promise.resolve()
         } catch (error) {
             return Promise.reject(error)

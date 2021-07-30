@@ -4,6 +4,9 @@ import {RegisterCommand} from "../types/Auth/Requests/RegisterCommand"
 import {LoginCommand} from "../types/Auth/Requests/LoginCommand"
 import {RefreshTokenCommand} from "../types/Auth/Requests/RefreshTokenCommand"
 import {VerifyEmailCommand} from "../types/Auth/Requests/VerifyEmailCommand"
+import {IBaseResponse} from "../types/IBaseResponse"
+import {IRegisterResponse} from "../types/Auth/Responses/IRegisterResponse"
+import {ILoginResponse} from "../types/Auth/Responses/ILoginResponse"
 
 export class AuthApi {
     protected headers: {
@@ -21,8 +24,8 @@ export class AuthApi {
 
     public async register(data: RegisterCommand) {
         try {
-            // @ts-ignore
-            const res: {data: string} = await this.apiConnector.post(
+
+            const res: {data: IRegisterResponse} = await this.apiConnector.post(
                 AuthRoutes.postRegister,
                 {
                     phoneNumber: data.phoneNumber,
@@ -59,7 +62,7 @@ export class AuthApi {
 
     public async login(data: LoginCommand) {
         try {
-            const res: {data: string} = await this.apiConnector.post(
+            const res: {data: ILoginResponse} = await this.apiConnector.post(
                 AuthRoutes.postLogin,
                 {
                     email: data.email,
@@ -91,7 +94,7 @@ export class AuthApi {
     public async verifyEmail(data: VerifyEmailCommand) {
 
         try {
-            const res: {data: string} = await this.apiConnector.post(AuthRoutes.verifyEmail, {email: data.email, userId: data.userId}, {headers: this.headers})
+            const res: {data: IBaseResponse} = await this.apiConnector.post(AuthRoutes.verifyEmail, {email: data.email, userId: data.userId}, {headers: this.headers})
             return Promise.resolve(res.data)
         } catch (error) {
 
