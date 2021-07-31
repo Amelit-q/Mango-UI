@@ -38,6 +38,7 @@ export class AuthStore {
     @action
     public setUserId = (userId: string) => {
         this._userId = userId
+        localStorage.setItem("userId", userId)
     }
 
     public async registration(data: RegisterCommand) {
@@ -57,6 +58,7 @@ export class AuthStore {
         try {
             const res: IBaseResponse = await this.registrationApi.verifyEmail(data)
             this.setMessage(res.message)
+            this.setSuccess(res.success)
 
             return Promise.resolve()
 
@@ -69,6 +71,7 @@ export class AuthStore {
 
         try {
             // @ts-ignore
+            // eslint-disable-next-line
             const res: ILoginResponse = await this.registrationApi.login(data)
             return Promise.resolve()
         } catch (error) {
