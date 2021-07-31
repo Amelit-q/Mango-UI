@@ -43,11 +43,17 @@ export class AuthApi {
             if (error && error.response) {
                 let errorText = ""
                 switch (error.response.status) {
+                    case 400:
+                        errorText = "Bad Request"
+                        break
                     case 401:
                         errorText = "Wrong login or password"
                         break
                     case 403:
                         errorText = "Access denied"
+                        break
+                    case 409:
+                        errorText = "Conflict"
                         break
                     default:
                         errorText = error.response.status
