@@ -2,10 +2,10 @@ import {action, makeAutoObservable, observable} from "mobx"
 import {AuthApi} from "../api/AuthApi"
 import {RegisterCommand} from "../types/Auth/Requests/RegisterCommand"
 import {LoginCommand} from "../types/Auth/Requests/LoginCommand"
-import {ILoginResponse} from "../types/Auth/Responses/ILoginResponse"
 import {VerifyEmailCommand} from "../types/Auth/Requests/VerifyEmailCommand"
 import {IBaseResponse} from "../types/IBaseResponse"
 import {IRegisterResponse} from "../types/Auth/Responses/IRegisterResponse"
+import {DefaultSessionEntity, IDefaultSession} from "./entities/SessionEntity"
 
 export class AuthStore {
     private registrationApi = new AuthApi()
@@ -24,6 +24,9 @@ export class AuthStore {
 
     @observable
     private _isLogged: boolean = false
+
+    @observable
+    private _session: DefaultSessionEntity | undefined = undefined
 
     @action
     public setMessage = (message: string) => {
@@ -72,7 +75,9 @@ export class AuthStore {
         try {
             // @ts-ignore
             // eslint-disable-next-line
-            const res: ILoginResponse = await this.registrationApi.login(data)
+            // const res: ILoginResponse = await this.registrationApi.login(data)
+            const session: IDefaultSession = await this.registrationApi.login(data)
+            this._session = new DefaultSessionEntity(session)
             return Promise.resolve()
         } catch (error) {
             return Promise.reject(error)
