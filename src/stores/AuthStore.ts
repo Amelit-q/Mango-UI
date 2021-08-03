@@ -73,9 +73,6 @@ export class AuthStore {
     public async login(data: LoginCommand) {
 
         try {
-            // @ts-ignore
-            // eslint-disable-next-line
-            // const res: ILoginResponse = await this.registrationApi.login(data)
             const session: IDefaultSession = await this.registrationApi.login(data)
             this._session = new DefaultSessionEntity(session)
             console.log(session, "session")
