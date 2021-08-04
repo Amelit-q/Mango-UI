@@ -75,7 +75,6 @@ export class AuthStore {
         try {
             const session: IDefaultSession = await this.registrationApi.login(data)
             this._session = new DefaultSessionEntity(session)
-            console.log(session, "session")
             return Promise.resolve()
         } catch (error) {
             return Promise.reject(error)
