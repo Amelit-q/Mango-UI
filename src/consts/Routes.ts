@@ -26,4 +26,5 @@ export class MessagesRoutes {
 
 export class UserRoutes {
     static getUserById = "/api/users/{userId}"
+    static getUsers = "/api/users"
 }

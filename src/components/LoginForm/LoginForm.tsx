@@ -16,7 +16,7 @@ export const LoginForm: React.FunctionComponent = () => {
         event.preventDefault()
 
         authStore.login(new LoginCommand(email, password))
-        // window.location.reload()
+        window.location.reload()
     }
 
     return (

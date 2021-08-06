@@ -1,5 +1,5 @@
 ﻿import axios, {AxiosInstance} from "axios"
-import {ApiRoute} from "../consts/Routes"
+import {ApiRoute, UserRoutes} from "../consts/Routes"
 
 export class UsersApi {
 
@@ -16,9 +16,30 @@ export class UsersApi {
     }
 
 
+    public async getUser(token: string) {
+        try {
+            const res: {data: any} = await this.apiConnector.get(UserRoutes.getUsers, {headers: `Bearer: ${token}`})
+            return Promise.resolve(res.data)
+        } catch (error) {
+            if (error && error.response) {
+                let errorText = ""
+                switch (error.response.status) {
+                    case 400:
+                        errorText = "Bad Request"
+                        break
+                    case 401:
+                        errorText = "Unauthorized"
+                        break
+                    default:
+                        errorText = error.response.status
+                        break
+                }
+                console.log("One of the Error messages from Get Users Request: ", errorText)
+            }
 
+            return Promise.reject(error)
 
+        }
 
-    public async getUser(data: any) {
     }
 }
