@@ -17,7 +17,7 @@ export class UsersApi {
     }
 
 
-    public async getUser(token: string) {
+    public async getUsers(token: string) {
         try {
             const res: {data: IGetUsersResponse} = await this.apiConnector.get(UserRoutes.getUsers, {headers: `Bearer: ${token}`})
             return Promise.resolve(res.data)

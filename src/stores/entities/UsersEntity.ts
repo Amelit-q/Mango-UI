@@ -1,55 +1,95 @@
-import {action, observable} from "mobx"
-import {UsersApi} from "../../api/UsersApi"
+import {action, computed, observable} from "mobx"
+import {IGetUsersResponse} from "../../types/Users/Responses/IGetUserResponse"
 
 export class UsersEntity {
-    private usersApi = new UsersApi()
+    @observable
+    protected _username: String | null = null
 
     @observable
-    private _username: String | null = null
+    protected _displayName: String | null = null
 
     @observable
-    private _displayName: String | null = null
+    protected _bio: String | null = null
 
     @observable
-    private _bio: String | null = null
+    protected _image: String | null = null
 
     @observable
-    private _image: String | null = null
+    protected _message: String | null = null
 
     @observable
-    private _message: String | null = null
+    protected _success: boolean = false
 
-    @observable
-    private _success: boolean = false
+    //TODO: separate user request from base message response, I mean separate user entity from that
 
-    @action
-    public setUsername = (username: string) => {
-        this._username = username
+
+    public constructor(users: IGetUsersResponse) {
+        this.setUsername(users.user.username)
+        this.setDisplayName(users.user.displayName)
+        this.setBio(users.user.bio)
+        this.setImage(users.user.image)
+        this.setMessage(users.message)
     }
 
     @action
-    public setDisplayName = (displayName: string) => {
+    private setUsername = (username: string) => {
+        this._username = username
+    }
+
+
+    @action
+    private setDisplayName = (displayName: string) => {
         this._displayName = displayName
     }
 
     @action
-    public setBio = (bio: string) => {
+    private setBio = (bio: string) => {
         this._bio = bio
     }
 
     @action
-    public setImage = (image: string) => {
+    private setImage = (image: string) => {
         this._image = image
     }
 
     @action
-    public setMessage = (message: string) => {
+    private setMessage = (message: string) => {
         this._message = message
     }
 
     @action
-    public setSuccess = (success: boolean) => {
+    private setSuccess = (success: boolean) => {
         this._success = success
+    }
+
+    @computed
+    public get username() {
+        return this._username
+    }
+
+    @computed
+    public get displayName() {
+        return this._displayName
+    }
+
+    @computed
+    public get bio() {
+        return this._bio
+    }
+
+    @computed
+    public get image() {
+        return this._image
+    }
+
+    @computed
+    public get message() {
+        return this._message
+    }
+
+    @computed
+    public get success() {
+        return this._success
     }
 
 
