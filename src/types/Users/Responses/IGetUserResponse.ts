@@ -1,6 +1,8 @@
-﻿import {IBaseResponse} from "../../IBaseResponse";
-import {IUser} from "../Models/IUser";
+﻿import {IBaseResponse} from "../../IBaseResponse"
+import {IUser} from "../Models/IUser"
 
-export interface IGetUserResponse extends IBaseResponse {
+export interface IGetUsersResponse extends IBaseResponse {
     user: IUser;
+    message: "string",
+    success: boolean
 }

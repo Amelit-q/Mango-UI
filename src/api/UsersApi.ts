@@ -1,5 +1,6 @@
 ﻿import axios, {AxiosInstance} from "axios"
 import {ApiRoute, UserRoutes} from "../consts/Routes"
+import {IGetUsersResponse} from "../types/Users/Responses/IGetUserResponse"
 
 export class UsersApi {
 
@@ -18,7 +19,7 @@ export class UsersApi {
 
     public async getUser(token: string) {
         try {
-            const res: {data: any} = await this.apiConnector.get(UserRoutes.getUsers, {headers: `Bearer: ${token}`})
+            const res: {data: IGetUsersResponse} = await this.apiConnector.get(UserRoutes.getUsers, {headers: `Bearer: ${token}`})
             return Promise.resolve(res.data)
         } catch (error) {
             if (error && error.response) {
