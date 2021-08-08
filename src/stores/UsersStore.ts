@@ -1,10 +1,13 @@
 import {IGetUsersResponse} from "../types/Users/Responses/IGetUserResponse"
 import {action, computed, makeAutoObservable, observable} from "mobx"
 import {UsersApi} from "../api/UsersApi"
+import {UsersEntity} from "./entities/UsersEntity"
 
 export class UsersStore {
     private usersApi = new UsersApi()
 
+    @observable
+    private Users: UsersEntity | null = null
 
     @observable
     protected _message: String | null = null
@@ -36,7 +39,10 @@ export class UsersStore {
 
     public async getUsers(token: string) {
         try {
-            const res: {data: IGetUsersResponse} = await this.usersApi.getUsers()
+            const res: IGetUsersResponse = await this.usersApi.getUsers(token)
+            this.setMessage(res.message)
+            this.setSuccess(res.success)
+
             return Promise.resolve()
 
         } catch (error) {

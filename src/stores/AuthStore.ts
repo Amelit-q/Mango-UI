@@ -26,7 +26,7 @@ export class AuthStore {
     private _isLogged: boolean = false
 
     @observable
-    private _session: DefaultSessionEntity | undefined = undefined
+    private _session: DefaultSessionEntity | null = null
 
     @action
     public setMessage = (message: string) => {
