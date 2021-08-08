@@ -1,11 +1,37 @@
 import {IGetUsersResponse} from "../types/Users/Responses/IGetUserResponse"
-import {makeAutoObservable} from "mobx"
+import {action, computed, makeAutoObservable, observable} from "mobx"
 import {UsersApi} from "../api/UsersApi"
 
 export class UsersStore {
     private usersApi = new UsersApi()
 
 
+    @observable
+    protected _message: String | null = null
+
+    @observable
+    protected _success: boolean = false
+
+    @action
+    private setMessage = (value: string) => {
+        this._message = value
+    }
+
+    @action
+    private setSuccess = (value: boolean) => {
+        this._success = value
+    }
+
+
+    @computed
+    public get message() {
+        return this._message
+    }
+
+    @computed
+    public get success() {
+        return this._success
+    }
 
 
     public async getUsers(token: string) {
