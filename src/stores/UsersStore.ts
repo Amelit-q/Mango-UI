@@ -7,13 +7,14 @@ export class UsersStore {
     private usersApi = new UsersApi()
 
     @observable
-    private Users: UsersEntity | null = null
+    private _users: UsersEntity | null = null
 
     @observable
     protected _message: String | null = null
 
     @observable
     protected _success: boolean = false
+
 
     @action
     private setMessage = (value: string) => {
@@ -42,6 +43,8 @@ export class UsersStore {
             const res: IGetUsersResponse = await this.usersApi.getUsers(token)
             this.setMessage(res.message)
             this.setSuccess(res.success)
+            this._users = new UsersEntity(res.user)
+
 
             return Promise.resolve()
 

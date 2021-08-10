@@ -1,4 +1,5 @@
 import {action, computed, observable} from "mobx"
+import {IUser} from "../../types/Users/Models/IUser"
 import {IGetUsersResponse} from "../../types/Users/Responses/IGetUserResponse"
 
 export class UsersEntity {
@@ -15,11 +16,11 @@ export class UsersEntity {
     protected _image: String | null = null
 
 
-    public constructor(users: IGetUsersResponse) {
-        this.setUsername(users.user.username)
-        this.setDisplayName(users.user.displayName)
-        this.setBio(users.user.bio)
-        this.setImage(users.user.image)
+    public constructor(users: IUser) {
+        this.setUsername(users.username)
+        this.setDisplayName(users.displayName)
+        this.setBio(users.bio)
+        this.setImage(users.image)
     }
 
     @action
