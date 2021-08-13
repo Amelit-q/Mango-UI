@@ -1,4 +1,4 @@
-﻿import axios, {AxiosInstance} from "axios"
+import axios, {AxiosInstance} from "axios"
 import {ApiRoute, UserRoutes} from "../consts/Routes"
 import {IGetUsersResponse} from "../types/Users/Responses/IGetUserResponse"
 

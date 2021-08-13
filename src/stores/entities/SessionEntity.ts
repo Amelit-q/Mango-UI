@@ -16,7 +16,6 @@ export class DefaultSessionEntity {
     @observable
     protected _accessToken: string | null = null
 
-
     @action
     private setAccessToken = (value: string | null) => {
         this._accessToken = value
