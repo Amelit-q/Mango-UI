@@ -1,6 +1,5 @@
 import {action, computed, observable} from "mobx"
 import {IUser} from "../../types/Users/Models/IUser"
-import {IGetUsersResponse} from "../../types/Users/Responses/IGetUserResponse"
 
 export class UsersEntity {
     @observable

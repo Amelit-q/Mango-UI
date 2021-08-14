@@ -1,19 +1,18 @@
 import * as React from "react"
 import {LoginForm} from "../LoginForm/LoginForm"
 import styled from "styled-components"
-import {UsersStore} from "../../stores/UsersStore"
+// import {UsersStore} from "../../stores/UsersStore"
 
 export const Navbar = () => {
 
-    const usersStore = new UsersStore()
+    // const usersStore = new UsersStore()
 
     const [registerPopupVisible, setRegisterPopupVisible] = React.useState(false)
 
     // console.log(usersStore.getUsers())
 
 
-
-    const handleLoginButtonClick = (event: any) => {
+    const handleLoginButtonClick = () => {
         setRegisterPopupVisible(true)
     }
 
@@ -24,6 +23,7 @@ export const Navbar = () => {
                 onDoubleClick={() => {
                     setRegisterPopupVisible(false)
                 }}
+
             >
                 Login
             </button>
