@@ -16,6 +16,7 @@ export const Navbar = () => {
         setRegisterPopupVisible(true)
     }
 
+
     return (
         <Container>
             <button
@@ -24,13 +25,10 @@ export const Navbar = () => {
                     setRegisterPopupVisible(false)
                 }}
 
+
             >
                 Login
             </button>
-            <div>12342</div>
-            <div>12342</div>
-            <div>12342</div>
-            <div>12342</div>
             <LoginWrapper>{registerPopupVisible && <LoginForm />}</LoginWrapper>
         </Container>
     )
