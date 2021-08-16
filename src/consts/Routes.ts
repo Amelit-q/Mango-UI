@@ -15,6 +15,7 @@ export class ChatsRoutes {
     static postGroup = "/api/chats/group"
     static postDirectChat = "/api/chats/direct-chat"
     static postJoinGroup = "/api/chats/group/join/{chatId}"
+    static getChatsByName = "/api/chats/searches"
 }
 
 export class MessagesRoutes {
@@ -27,4 +28,9 @@ export class MessagesRoutes {
 export class UserRoutes {
     static getUserById = "/api/users/{userId}"
     static getUsers = "/api/users"
+}
+
+export class ContactsRoutes {
+    static addNewContact = "/api/contacts"
+    static getContactList = "api/contacts"
 }
