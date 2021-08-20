@@ -4,7 +4,7 @@ export class ApiRoute {
 
 export class AuthRoutes {
     static postRegister = "/api/auth/register"
-    static postLogin = "/api/auth/login"
+    static postLogin = "/api/sessions"
     static postRefreshToken = "/api/auth/refresh-token"
     static getVerifyPhone = "/api/auth/verify-phone"
     static verifyEmail = "/api/auth/verify-email"
