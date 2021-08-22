@@ -12,6 +12,7 @@ export class AuthRoutes {
 
 export class ChatsRoutes {
     static getChats = "/api/chats"
+    static createNewGroup = "/api/chats"
     static postGroup = "/api/chats/group"
     static postDirectChat = "/api/chats/direct-chat"
     static postJoinGroup = "/api/chats/group/join/{chatId}"
