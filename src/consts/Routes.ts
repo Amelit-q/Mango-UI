@@ -28,10 +28,12 @@ export class MessagesRoutes {
 
 export class UserRoutes {
     static getUserById = "/api/users/{userId}"
+    static addUserById = "/api/contacts/{contactId}"
     static getUsers = "/api/users"
 }
 
 export class ContactsRoutes {
-    static addNewContact = "/api/contacts"
+
+    static deleteContact = "/api/contacts/{contactId}"
     static getContactList = "api/contacts"
 }
