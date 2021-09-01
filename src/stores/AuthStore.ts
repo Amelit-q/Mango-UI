@@ -5,7 +5,7 @@ import {LoginCommand} from "../types/Auth/Requests/LoginCommand"
 import {VerifyEmailCommand} from "../types/Auth/Requests/VerifyEmailCommand"
 import {IBaseResponse} from "../types/IBaseResponse"
 import {IRegisterResponse} from "../types/Auth/Responses/IRegisterResponse"
-import {DefaultSessionEntity, IDefaultSession} from "./entities/SessionEntity"
+import {DefaultSessionEntity, DefaultSession} from "./entities/SessionEntity"
 
 export class AuthStore {
     private registrationApi = new AuthApi()
@@ -73,7 +73,7 @@ export class AuthStore {
     public async login(data: LoginCommand) {
 
         try {
-            const session: IDefaultSession = await this.registrationApi.login(data)
+            const session: DefaultSession = await this.registrationApi.login(data)
             this._session = new DefaultSessionEntity(session)
             return Promise.resolve()
         } catch (error) {

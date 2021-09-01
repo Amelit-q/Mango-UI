@@ -1,15 +1,11 @@
 import {action, computed, observable} from "mobx"
 
-export interface IDefaultSession {
-    userId: string | null
+export interface DefaultSession {
     refreshTokenId: string | null
     accessToken: string | null
 }
 
 export class DefaultSessionEntity {
-    @observable
-    protected _userId: string | null = null
-
     @observable
     protected _refreshTokenId: string | null = null
 
@@ -26,16 +22,10 @@ export class DefaultSessionEntity {
         this._refreshTokenId = value
     }
 
-    @action
-    private setUserId = (value: string | null) => {
-        this._userId = value
-    }
 
-
-    public constructor(session: IDefaultSession) {
+    public constructor(session: DefaultSession) {
         this.setAccessToken(session.accessToken)
         this.setRefreshToken(session.refreshTokenId)
-        this.setUserId(session.userId)
     }
 
     @computed
@@ -46,11 +36,6 @@ export class DefaultSessionEntity {
     @computed
     public get refreshToken() {
         return this._refreshTokenId
-    }
-
-    @computed
-    public get userId() {
-        return this._userId
     }
 
 
