@@ -46,7 +46,6 @@ export class AuthStore {
 
     public async registration(data: RegisterCommand) {
         try {
-
             const res: IRegisterResponse = await this.registrationApi.register(data)
             this.setMessage(res.message)
             this.setSuccess(res.success)
@@ -85,5 +84,6 @@ export class AuthStore {
 
     public constructor() {
         makeAutoObservable(this)
+
     }
 }

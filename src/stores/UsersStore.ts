@@ -54,6 +54,11 @@ export class UsersStore {
         }
     }
 
+    //TODO: make request for this function inside of api file
+    // public async getUserInfo() {
+    //
+    //
+
     public constructor() {
         makeAutoObservable(this)
     }
