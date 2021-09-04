@@ -11,15 +11,11 @@ export class UsersEntity {
     @observable
     protected _bio: String | null = null
 
-    @observable
-    protected _image: String | null = null
-
 
     public constructor(users: IUser) {
         this.setUsername(users.username)
         this.setDisplayName(users.displayName)
         this.setBio(users.bio)
-        this.setImage(users.image)
     }
 
     @action
@@ -38,12 +34,6 @@ export class UsersEntity {
         this._bio = value
     }
 
-    @action
-    private setImage = (value: string) => {
-        this._image = value
-    }
-
-
     @computed
     public get username() {
         return this._username
@@ -57,11 +47,6 @@ export class UsersEntity {
     @computed
     public get bio() {
         return this._bio
-    }
-
-    @computed
-    public get image() {
-        return this._image
     }
 
 
