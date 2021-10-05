@@ -16,6 +16,7 @@ export default function App() {
                     <Route exact path="/main" component={Main} />
                     <Route exact path="/registration" component={Registration} />
                     <Route exact path="/verification" component={Verification} />
+                    {/*TODO: DELETE LOGIN TEST COMP TASK */}
                     <Route exact path="/login-test" component={LoginForm} />
 
                 </Switch>

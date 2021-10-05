@@ -94,20 +94,21 @@ export const Registration: React.FunctionComponent = observer(() => {
 
 
 const FormContainer = styled("div")`
-    height: 100vh;
-    width: 100vw;
-    font-family: 'Open Sans',sans-serif;
-    color: #fff;
-    background: linear-gradient(#141e30, #243b55);    
-    display: flex;
-    justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Open Sans',sans-serif;
+  color: black;
+  background: linear-gradient(#6bff18, #FF1493);
+  display: flex;
+  justify-content: center;
 `
 
 export const FormWrapper = styled("form")`
     width: 400px;
     height: fit-content;
     padding: 40px;
-    background: rgba(0,0,0,.5);
+    background: black;
+    background: #181a1b;
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
@@ -119,12 +120,11 @@ export const InputFormWrapper = styled("div")`
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
-  color: #fff;
+  color: #FF1493;
   margin-bottom: 30px;
   border: none;
   outline: none;
   background: transparent;
-    
 `
 export const InputWrapper = styled("input")`
   width: 100%;
@@ -153,12 +153,11 @@ const SubmitButton = styled("input")`
     margin-top: 40px;
     letter-spacing: 2px;
     border: 2px solid;
-    &:hover {
+  &:hover {
     background: #243b55;
     color: #fff;
     border-radius: 5px;
-    }
-    
+  }
 `
 
 const SelectWrapper = styled("select")`
@@ -168,3 +167,11 @@ const SelectWrapper = styled("select")`
     border-radius: 5px;
     background-color: #ddd;
 `
+export const BodyBox = styled("input")`
+  background: linear-gradient(45deg, rgba(66, 183, 245, 0.8) 0%, rgba(66, 245, 189, 0.4) 100%);
+  color: rgba(0, 0, 0, 0.6);
+`
+export const Container = styled("div")`
+    display: flex;
+    flex-direction: column;
+  `

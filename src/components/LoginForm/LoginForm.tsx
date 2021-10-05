@@ -16,11 +16,13 @@ export const LoginForm: React.FunctionComponent = () => {
         event.preventDefault()
 
         authStore.login(new LoginCommand(email, password))
-        // window.location.reload()
+        //window.location.reload()
     }
 
     return (
+<div>
         <FormWrapper onSubmit={handleFormSubmit}>
+
             <InputFormWrapper>
                 <label>
                     Enter your E-MAIL
@@ -40,16 +42,17 @@ export const LoginForm: React.FunctionComponent = () => {
             </InputFormWrapper>
 
 
-            <SubmitButton type="submit" value="submit" />
-
+            <SubmitButton type="submit" value="LOG IN" />
         </FormWrapper>
+</div>
+
     )
 
 
 }
 
 const SubmitButton = styled("input")`
-    background: linear-gradient(#020024, #8951e9);
+   /* background: rgb(9, 67, 162);
     width: 100%;
     height: 8.5%;
     padding: 10px 20px;
@@ -65,11 +68,23 @@ const SubmitButton = styled("input")`
     border: 2px solid;
     &:hover {
     background: #243b55;
-    color: #fff;
-    border-radius: 5px;
+    color: white;
+    border-radius: 5px;*/
+  
+  outline: none;
+  background: #4285F4;
+  width: 100%;
+  border: 0;
+  border-radius: 4px;
+  padding: 12px 20px;
+  color: #FFFFFF;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 500;
+  line-height: inherit;
+  text-transform: uppercase;
+  cursor: pointer;
     }
-`
-
-
+{`
 
 
