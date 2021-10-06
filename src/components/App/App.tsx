@@ -4,7 +4,6 @@ import {Messenger} from "../Messenger/Messenger"
 import {Registration} from "../../pages/Registration"
 import {Main} from "../../pages/Main"
 import {Verification} from "../../pages/Verification"
-import {LoginForm} from "../LoginForm/LoginForm"
 
 
 export default function App() {
@@ -16,8 +15,6 @@ export default function App() {
                     <Route exact path="/main" component={Main} />
                     <Route exact path="/registration" component={Registration} />
                     <Route exact path="/verification" component={Verification} />
-                    {/*TODO: DELETE LOGIN TEST COMP TASK */}
-                    <Route exact path="/login-test" component={LoginForm} />
 
                 </Switch>
             </BrowserRouter>

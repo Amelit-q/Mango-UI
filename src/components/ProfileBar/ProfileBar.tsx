@@ -1,5 +1,7 @@
 import * as React from "react"
 import styled from "styled-components"
+import {LoginForm} from "../LoginForm/LoginForm"
+import {Container} from "../../pages/Registration"
 // import {UsersStore} from "../../stores/UsersStore"
 
 export const Navbar = () => {
@@ -18,18 +20,21 @@ export const Navbar = () => {
 
     return (
         <Container>
-
+            <button
+                onClick={handleLoginButtonClick}
+                onDoubleClick={() => {
+                    setRegisterPopupVisible(false)
+                }}
+            >
+                Login
+            </button>
+            <LoginWrapper>{registerPopupVisible && <LoginForm />}</LoginWrapper>
         </Container>
     )
 }
 
-const Container = styled("div")`
-    display: flex;
-    flex-direction: column;
+const LoginWrapper = styled("div")`
+  display: flex;
+  justify-content: center;
 `
 
-/*const LoginWrapper = styled("div")`
-    display: flex;
-    justify-content: center;
-`
-*/
