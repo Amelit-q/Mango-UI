@@ -1,16 +1,16 @@
 import * as React from "react"
 import styled from "styled-components"
-import {ReactComponent as Homesvg} from "./img/iconhome.svg"
-import {ReactComponent as Chatsvg} from "./img/chaticon.svg"
-import {ReactComponent as Callsvg} from "./img/Callsvg.svg"
-import {ReactComponent as Contactsvg} from "./img/Contactsvg.svg"
-import {ReactComponent as Optionsvg} from "./img/Optionsvg.svg"
+import {ReactComponent as Homesvg} from "../../assets/imgSide/iconhome.svg"
+import {ReactComponent as Chatsvg} from "../../assets/imgSide/chaticon.svg"
+import {ReactComponent as Callsvg} from "../../assets/imgSide/Callsvg.svg"
+import {ReactComponent as Contactsvg} from "../../assets/imgSide/Contactsvg.svg"
+import {ReactComponent as Optionsvg} from "../../assets/imgSide/Optionsvg.svg"
 //import {ReactComponent as Asvg} from "./img/Asvg.svg"
 
 
 export const Sidebar = () => {
     return (
-        <SideBarContainer>
+        <NavBarContainer>
             <AContainer>
                 <APicture>
                 </APicture>
@@ -42,9 +42,20 @@ export const Sidebar = () => {
                     </OptionPicture>
                 </OptionContainer>
             </LinkContainer>
-        </SideBarContainer>
+            <LineOne></LineOne>
+        </NavBarContainer>
     )
 }
+
+const LineOne = styled("div")`
+  display: inline-block;
+  position: absolute;
+  left: 83px;
+  height: 100%;
+  border: 1px solid #ECEEF5;
+  box-sizing: border-box;
+
+`
 
 const APicture = styled("div")`
   position: absolute;
@@ -177,7 +188,7 @@ const ChatContainer = styled("div")`
 
 `
 
-const SideBarContainer = styled("nav")`
+const NavBarContainer = styled("nav")`
   display: flex;
   flex-direction: column;
   background: #FFFFFF;
@@ -198,25 +209,6 @@ const HomePicture = styled("div")`
   left: 36.9%;
   right: 36.9%;
   top: calc(50% - 22px / 2);
-  font-family: Material Icons;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 22px;
-  line-height: 22px;
-  /* identical to box height */
-
-  text-align: center;
-
-  color: #8083A3;
-`
-
-const Chat = styled("div")`
-  position: absolute;
-  height: 22px;
-  left: 36.9%;
-  right: 36.9%;
-  top: calc(50% - 22px / 2);
-
   font-family: Material Icons;
   font-style: normal;
   font-weight: normal;

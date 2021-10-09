@@ -5,6 +5,7 @@ import {Registration} from "../../pages/Registration"
 import {Main} from "../../pages/Main"
 import {Verification} from "../../pages/Verification"
 import {Sidebar} from "../Sidebar/Sidebar"
+import {Navbar} from "../Navbar/Navbar"
 
 
 export default function App() {
@@ -16,8 +17,8 @@ export default function App() {
                     <Route exact path="/main" component={Main} />
                     <Route exact path="/registration" component={Registration} />
                     <Route exact path="/verification" component={Verification} />
-                    <Route exact path="/Sidebar" component={Sidebar} />
-
+                    <Route exact path="/sidebar" component={Sidebar} />
+                    <Route exact path="/navbar" component={Navbar} />
                 </Switch>
             </BrowserRouter>
 
