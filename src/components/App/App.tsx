@@ -6,6 +6,7 @@ import {Main} from "../../pages/Main"
 import {Verification} from "../../pages/Verification"
 import {Sidebar} from "../Sidebar/Sidebar"
 import {Navbar} from "../Navbar/Navbar"
+import {Header} from "../Header/Header"
 
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
                     <Route exact path="/verification" component={Verification} />
                     <Route exact path="/sidebar" component={Sidebar} />
                     <Route exact path="/navbar" component={Navbar} />
+                    <Route exact path="/header" component={Header} />
                 </Switch>
             </BrowserRouter>
 

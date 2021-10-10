@@ -407,11 +407,6 @@ const ContactContainer1 = styled("div")`
   resize: both;
 `
 
-/*const Wrapper = styled("div")`
-  display: flex;
-  flex-direction: column;
-`
-*/
 /*---------------------------------------------------------------------------*/
 
 const ListContainer = styled("div")`

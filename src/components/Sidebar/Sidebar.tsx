@@ -5,6 +5,7 @@ import {ReactComponent as Chatsvg} from "../../assets/imgSide/chaticon.svg"
 import {ReactComponent as Callsvg} from "../../assets/imgSide/Callsvg.svg"
 import {ReactComponent as Contactsvg} from "../../assets/imgSide/Contactsvg.svg"
 import {ReactComponent as Optionsvg} from "../../assets/imgSide/Optionsvg.svg"
+import {ReactComponent as Searchsvg} from "../../assets/imgNavbar/Searchicon.svg"
 //import {ReactComponent as Asvg} from "./img/Asvg.svg"
 
 
@@ -41,13 +42,46 @@ export const Sidebar = () => {
                         <Optionsvg />
                     </OptionPicture>
                 </OptionContainer>
+                <SerachContainer>
+                    <SearchPicture>
+                        <Searchsvg />
+                    </SearchPicture>
+                </SerachContainer>
             </LinkContainer>
-            <LineOne></LineOne>
+            <Line></Line>
         </NavBarContainer>
     )
 }
 
-const LineOne = styled("div")`
+
+const SearchPicture = styled("div")`
+  position: absolute;
+  height: 22px;
+  left: 36.9%;
+  right: 36.9%;
+  top: calc(50% - 22px / 2);
+  font-family: Material Icons;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 22px;
+  /* identical to box height */
+
+  text-align: center;
+
+  color: #6B59CC;
+
+`
+const SerachContainer = styled("div")`
+  position: absolute;
+  height: 72px;
+  left: 0%;
+  right: 0%;
+  top: 313px;
+
+`
+
+const Line = styled("div")`
   display: inline-block;
   position: absolute;
   left: 83px;
@@ -81,8 +115,7 @@ const OptionContainer = styled("div")`
   height: 72px;
   left: 0%;
   right: 0%;
-  top: 313px;
-
+  top: 385px;
 `
 
 const OptionPicture = styled("div")`
@@ -204,11 +237,7 @@ const LinkContainer = styled("div")`
 `
 
 const HomePicture = styled("div")`
-  position: absolute;
-  height: 22px;
-  left: 36.9%;
-  right: 36.9%;
-  top: calc(50% - 22px / 2);
+
   font-family: Material Icons;
   font-style: normal;
   font-weight: normal;
@@ -222,7 +251,8 @@ const HomePicture = styled("div")`
 `
 
 const HomeContainer = styled("div")`
-  position: absolute;
+
+  position: relative;
   height: 72px;
   left: 0%;
   right: 0%;
