@@ -6,10 +6,8 @@ import {VerificationMethod} from "../types/Auth/Enums/VerificationMethod"
 import {RegisterCommand} from "../types/Auth/Requests/RegisterCommand"
 import {AuthStore} from "../stores/AuthStore"
 
-
 export const Registration: React.FunctionComponent = observer(() => {
     const authStore = new AuthStore()
-
 
     const [phoneNumber, setPhoneNumber] = React.useState("")
     const [email, setEmail] = React.useState("")
@@ -22,7 +20,6 @@ export const Registration: React.FunctionComponent = observer(() => {
         event.preventDefault()
         setTermsAccepted(true)
         authStore.registration(new RegisterCommand(phoneNumber, email, name, password, verificationMethod, termsAccepted))
-
     }
 
     const handleSelectChange = (event: any) => {
@@ -31,12 +28,9 @@ export const Registration: React.FunctionComponent = observer(() => {
         } else if (event.target.value === "email") {
             setVerificationMethod(2)
         }
-
     }
 
-
     return (
-
         <FormContainer onSubmit={handleFormSubmit}>
             <FormWrapper>
                 <InputFormWrapper>
@@ -67,40 +61,31 @@ export const Registration: React.FunctionComponent = observer(() => {
                     </label>
                 </InputFormWrapper>
 
-
                 <label style={{margin: "0 0 15px 0"}}>
                     Authorization method:
-
                     <SelectWrapper onChange={handleSelectChange}>
                         <option value="phone">Phone number</option>
                         <option value="email">E-Mail</option>
                     </SelectWrapper>
-
                 </label>
-
 
                 <label>
                     By clicking submit you are agreeing to the Terms and Conditions.
                     <SubmitButton type="submit" value="submit" />
                 </label>
             </FormWrapper>
-
-
         </FormContainer>
-
-
     )
 })
 
-
 const FormContainer = styled("div")`
-  height: 100vh;
-  width: 100vw;
-  font-family: 'Open Sans',sans-serif;
-  color: black;
-  background: linear-gradient(#6bff18, #FF1493);
-  display: flex;
-  justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    font-family: "Open Sans", sans-serif;
+    color: black;
+    background: linear-gradient(#6bff18, #ff1493);
+    display: flex;
+    justify-content: center;
 `
 
 export const FormWrapper = styled("form")`
@@ -110,36 +95,36 @@ export const FormWrapper = styled("form")`
     background: black;
     background: #181a1b;
     box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
 `
 
 export const InputFormWrapper = styled("div")`
-  width: 100%;
-  padding: 10px 0;
-  font-size: 16px;
-  color: #FF1493;
-  margin-bottom: 30px;
-  border: none;
-  outline: none;
-  background: transparent;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #ff1493;
+    margin-bottom: 30px;
+    border: none;
+    outline: none;
+    background: transparent;
 `
 export const InputWrapper = styled("input")`
-  width: 100%;
-  padding: 10px 0;
-  font-size: 16px;
-  color: #fff;
-  margin-bottom: 30px;
-  border: none;
-  border-bottom: 1px solid #fff;
-  outline: none;
-  background: transparent;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
 `
 
 const SubmitButton = styled("input")`
-    background: linear-gradient(#243B6B, #8951e9);
+    background: linear-gradient(#243b6b, #8951e9);
     width: 100%;
     height: 8.5%;
     padding: 10px 20px;
@@ -153,11 +138,11 @@ const SubmitButton = styled("input")`
     margin-top: 40px;
     letter-spacing: 2px;
     border: 2px solid;
-  &:hover {
-    background: #243b55;
-    color: #fff;
-    border-radius: 5px;
-  }
+    &:hover {
+        background: #243b55;
+        color: #fff;
+        border-radius: 5px;
+    }
 `
 
 const SelectWrapper = styled("select")`
@@ -168,10 +153,10 @@ const SelectWrapper = styled("select")`
     background-color: #ddd;
 `
 export const BodyBox = styled("input")`
-  background: linear-gradient(45deg, rgba(66, 183, 245, 0.8) 0%, rgba(66, 245, 189, 0.4) 100%);
-  color: rgba(0, 0, 0, 0.6);
+    background: linear-gradient(45deg, rgba(66, 183, 245, 0.8) 0%, rgba(66, 245, 189, 0.4) 100%);
+    color: rgba(0, 0, 0, 0.6);
 `
 export const Container = styled("div")`
     display: flex;
     flex-direction: column;
-  `
+`

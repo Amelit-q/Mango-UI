@@ -5,7 +5,7 @@ import {Registration} from "../../pages/Registration"
 import {Main} from "../../pages/Main"
 import {Verification} from "../../pages/Verification"
 import {LoginForm} from "../LoginForm/LoginForm"
-
+import {Contacts} from '../../pages/Contacts'
 
 export default function App() {
     return (
@@ -14,6 +14,7 @@ export default function App() {
                 <Switch>
                     <Route exact path="/" component={Messenger} />
                     <Route exact path="/main" component={Main} />
+                    <Route exact path="/contacts" component={Contacts}/>
                     <Route exact path="/registration" component={Registration} />
                     <Route exact path="/verification" component={Verification} />
                     {/*TODO: DELETE LOGIN TEST COMP TASK */}
