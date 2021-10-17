@@ -11,169 +11,70 @@ import {ReactComponent as Searchsvg} from "../../assets/imgNavbar/Searchicon.svg
 
 export const Sidebar = () => {
     return (
-        <Container>
-            <Logo>
-                <Homesvg>
-
-                </Homesvg>
-            </Logo>
-            <BtnBox>
-                <Home>
-                    <Homesvg>
-
-                    </Homesvg>
-                </Home>
-                <Chat>
-                    <Chatsvg>
-
-                    </Chatsvg>
-                </Chat>
-                <Call>
-                    <Callsvg>
-
-                    </Callsvg>
-                </Call>
-                <Contact>
-                    <Contactsvg>
-
-                    </Contactsvg>
-                </Contact>
-                <Search>
-                    <Searchsvg>
-
-                    </Searchsvg>
-                </Search>
-                <Opon>
-                    <Optionsvg>
-
-                    </Optionsvg>
-                </Opon>
-                <Footer>
-
-                </Footer>
-            </BtnBox>
-        </Container>
+        <Wrapper>
+            <Container>
+                <Logo>
+                    <Homesvg/>
+                </Logo>
+                <BtnBox>
+                    <Ul>
+                        <Homesvg />
+                    </Ul>
+                    <Ul>
+                        <Chatsvg />
+                    </Ul>
+                    <Ul>
+                        <Callsvg />
+                    </Ul>
+                    <Ul>
+                        <Contactsvg />
+                    </Ul>
+                    <Ul>
+                        <Searchsvg />
+                    </Ul>
+                    <Ul>
+                        <Optionsvg/>
+                    </Ul>
+                </BtnBox>
+            </Container>
+            <Footer></Footer>
+        </Wrapper>
     )
 
 }
 
+
+const Footer = styled("div")`
+  flex: 1 0 auto;
+  display: flex;
+`
 const Logo = styled("div")`
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-  padding: 15px 20px 25px 25px;
-
-  position: static;
-  height: 50px;
-  left: 0%;
-  right: 0%;
-  top: 0px;
+  margin: 0 0 144px 0;
 `
-const Footer = styled("div")`
-  min-height: calc(20vh - 80px);
-`
-const Opon = styled("div")`
+const Ul = styled("ul")`
   display: flex;
+  padding-left: 0;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-  padding: 15px 20px 25px 25px;
-
-  position: static;
-  height: 50px;
-  left: 0%;
-  right: 0%;
-  top: 672px;
-`
-const Search = styled("div")`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-  padding: 15px 20px 25px 25px;
-
-  position: static;
-  height: 50px;
-  left: 0%;
-  right: 0%;
-  top: 384px;
-`
-const Contact = styled("div")`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-  padding: 15px 20px 25px 25px;
-
-  position: static;
-  height: 50px;
-  left: 0%;
-  right: 0%;
-  top: 288px;
-`
-const Call = styled("div")`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-  padding: 15px 20px 25px 25px;
-
-  position: static;
-  height: 50px;
-  left: 0%;
-  right: 0%;
-  top: 192px;
-
-`
-const Chat = styled("div")`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-  padding: 15px 20px 25px 25px;
-
-  position: static;
-  height: 50px;
-  left: 0%;
-  right: 0%;
-  top: 96px;
-`
-const Home = styled("div")`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-  padding: 15px 20px 25px 25px;
-
-  position: static;
-  height: 50px;
-  left: 0%;
-  right: 0%;
-  top: 0px;
+  padding-bottom: 80px;
+  margin: 0;
 `
 const BtnBox = styled("div")`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px;
-  margin: 110px 0px 0px 0px;
-  position: static;
-  height: 150%;
+  height: 100%;
+  flex-grow: 1;
 `
 const Container = styled("div")`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  padding: 0.5px 0px 0px;
-
-  position: static;
+  margin: 15px 15px;
   width: 84px;
-  height: 100%;
-  left: 0px;
-  top: 0px;
-
-  background: #FFFFFF;
+  min-height: 100%;
+  flex: 1 0 auto;
+`
+const Wrapper = styled("div")`
+  max-width: 100%;
+  margin: 0px auto;
 `
