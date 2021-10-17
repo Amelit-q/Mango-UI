@@ -9,478 +9,477 @@ import {ReactComponent as NIGGERsvg} from "../../assets/imgNavbar/NIGGER.svg"
 
 export const Navbar = () => {
     return (
-        <Navbarcontainer>
-            <Bg>
-                <Searchfield>
-                    <Firsttext>
+        <Container>
+            <ContentContainer>
+                <Header>
+                    <P>
                         Search for a contact
-                    </Firsttext>
-                    <Secondtext>
-                        Name, email or phone number
-                    </Secondtext>
-                    <Searchicon>
-                        <Searchsvg />
-                    </Searchicon>
-                </Searchfield>
-                <ListContainer>
-                    <ContactContainer1>
-                        <Text>
-                            Andrey Androsov
-                        </Text>
+                    </P>
+                    <PBox>
+                        <P1>
+                            Name, email or phone number
+                        </P1>
+
+                        <Icon>
+                            <Searchsvg>
+
+                            </Searchsvg>
+                        </Icon>
+                    </PBox>
+                </Header>
+                <CardContainer>
+                    <NIGGERsvg />
+                    <TextBox>
                         <Text1>
-                            Director of the pelmen factory at arduino
+                            Bradley Malone
                         </Text1>
-                        <ButtonsContainer>
-                            <ButtonContainer>
-                                <Button>
-                                    <Chatsvg />
-                                </Button>
-                            </ButtonContainer>
-                            <ButtonContainer2>
-                                <Button>
-                                    <Callsvg />
-                                </Button>
-                            </ButtonContainer2>
-                            <ButtonContainer3>
-                                <Button>
-                                    <DotDotDotsvg />
-                                </Button>
-                            </ButtonContainer3>
-                        </ButtonsContainer>
-                        <Boxicon>
-                            <NIGGERsvg></NIGGERsvg>
-                            <Status1></Status1>
-                        </Boxicon>
-                    </ContactContainer1>
-                    <ContactContainer1>
-                        <Text>
-                            Andrey Androsov
-                        </Text>
+                        <Text2>
+                            Sales Manager
+                        </Text2>
+                    </TextBox>
+                    <BtnBox>
+                        <Bg>
+                            <BoxBtn>
+                                <Chatsvg></Chatsvg>
+                            </BoxBtn>
+                        </Bg>
+
+                        <Bg>
+                        <BoxBtn>
+                            <Callsvg></Callsvg>
+                        </BoxBtn>
+                    </Bg>
+                        <Bg>
+                            <BoxBtn1>
+                                <DotDotDotsvg></DotDotDotsvg>
+                            </BoxBtn1>
+                        </Bg>
+                    </BtnBox>
+                </CardContainer>
+                <CardContainer>
+                    <NIGGERsvg />
+                    <TextBox>
                         <Text1>
-                            Director of the pelmen factory at arduino
+                            Bradley Malone
                         </Text1>
-                        <ButtonsContainer>
-                            <ButtonContainer>
-                                <Button>
-                                    <Chatsvg />
-                                </Button>
-                            </ButtonContainer>
-                            <ButtonContainer2>
-                                <Button>
-                                    <Callsvg />
-                                </Button>
-                            </ButtonContainer2>
-                            <ButtonContainer3>
-                                <Button>
-                                    <DotDotDotsvg />
-                                </Button>
-                            </ButtonContainer3>
-                        </ButtonsContainer>
-                        <Boxicon>
-                            <NIGGERsvg></NIGGERsvg>
-                            <Status1></Status1>
-                        </Boxicon>
-                    </ContactContainer1>
-                    <ContactContainer1>
-                        <Text>
-                            Andrey Androsov
-                        </Text>
+                        <Text2>
+                            Sales Manager
+                        </Text2>
+                    </TextBox>
+                    <BtnBox>
+                        <Bg>
+                            <BoxBtn>
+                                <Chatsvg></Chatsvg>
+                            </BoxBtn>
+                        </Bg>
+
+                        <Bg>
+                            <BoxBtn>
+                                <Callsvg></Callsvg>
+                            </BoxBtn>
+                        </Bg>
+                        <Bg>
+                            <BoxBtn1>
+                                <DotDotDotsvg></DotDotDotsvg>
+                            </BoxBtn1>
+                        </Bg>
+                    </BtnBox>
+                </CardContainer>
+                <CardContainer>
+                    <NIGGERsvg />
+                    <TextBox>
                         <Text1>
-                            Director of the pelmen factory at arduino
+                            Bradley Malone
                         </Text1>
-                        <ButtonsContainer>
-                            <ButtonContainer>
-                                <Button>
-                                    <Chatsvg />
-                                </Button>
-                            </ButtonContainer>
-                            <ButtonContainer2>
-                                <Button>
-                                    <Callsvg />
-                                </Button>
-                            </ButtonContainer2>
-                            <ButtonContainer3>
-                                <Button>
-                                    <DotDotDotsvg />
-                                </Button>
-                            </ButtonContainer3>
-                        </ButtonsContainer>
-                        <Boxicon>
-                            <NIGGERsvg></NIGGERsvg>
-                            <Status1></Status1>
-                        </Boxicon>
-                    </ContactContainer1>
-                    <ContactContainer1>
-                        <Text>
-                            Andrey Androsov
-                        </Text>
+                        <Text2>
+                            Sales Manager
+                        </Text2>
+                    </TextBox>
+                    <BtnBox>
+                        <Bg>
+                            <BoxBtn>
+                                <Chatsvg></Chatsvg>
+                            </BoxBtn>
+                        </Bg>
+
+                        <Bg>
+                            <BoxBtn>
+                                <Callsvg></Callsvg>
+                            </BoxBtn>
+                        </Bg>
+                        <Bg>
+                            <BoxBtn1>
+                                <DotDotDotsvg></DotDotDotsvg>
+                            </BoxBtn1>
+                        </Bg>
+                    </BtnBox>
+                </CardContainer>
+                <CardContainer>
+                    <NIGGERsvg />
+                    <TextBox>
                         <Text1>
-                            Director of the pelmen factory at arduino
+                            Bradley Malone
                         </Text1>
-                        <ButtonsContainer>
-                            <ButtonContainer>
-                                <Button>
-                                    <Chatsvg />
-                                </Button>
-                            </ButtonContainer>
-                            <ButtonContainer2>
-                                <Button>
-                                    <Callsvg />
-                                </Button>
-                            </ButtonContainer2>
-                            <ButtonContainer3>
-                                <Button>
-                                    <DotDotDotsvg />
-                                </Button>
-                            </ButtonContainer3>
-                        </ButtonsContainer>
-                        <Boxicon>
-                            <NIGGERsvg></NIGGERsvg>
-                            <Status1></Status1>
-                        </Boxicon>
-                    </ContactContainer1>
-                    <ContactContainer1>
-                        <Text>
-                            Andrey Androsov
-                        </Text>
+                        <Text2>
+                            Sales Manager
+                        </Text2>
+                    </TextBox>
+                    <BtnBox>
+                        <Bg>
+                            <BoxBtn>
+                                <Chatsvg></Chatsvg>
+                            </BoxBtn>
+                        </Bg>
+
+                        <Bg>
+                            <BoxBtn>
+                                <Callsvg></Callsvg>
+                            </BoxBtn>
+                        </Bg>
+                        <Bg>
+                            <BoxBtn1>
+                                <DotDotDotsvg></DotDotDotsvg>
+                            </BoxBtn1>
+                        </Bg>
+                    </BtnBox>
+                </CardContainer>
+                <CardContainer>
+                    <NIGGERsvg />
+                    <TextBox>
                         <Text1>
-                            Director of the pelmen factory at arduino
+                            Bradley Malone
                         </Text1>
-                        <ButtonsContainer>
-                            <ButtonContainer>
-                                <Button>
-                                    <Chatsvg />
-                                </Button>
-                            </ButtonContainer>
-                            <ButtonContainer2>
-                                <Button>
-                                    <Callsvg />
-                                </Button>
-                            </ButtonContainer2>
-                            <ButtonContainer3>
-                                <Button>
-                                    <DotDotDotsvg />
-                                </Button>
-                            </ButtonContainer3>
-                        </ButtonsContainer>
-                        <Boxicon>
-                            <NIGGERsvg></NIGGERsvg>
-                            <Status1></Status1>
-                        </Boxicon>
-                    </ContactContainer1>
-                    <ContactContainer1>
-                        <Text>
-                            Andrey Androsov
-                        </Text>
+                        <Text2>
+                            Sales Manager
+                        </Text2>
+                    </TextBox>
+                    <BtnBox>
+                        <Bg>
+                            <BoxBtn>
+                                <Chatsvg></Chatsvg>
+                            </BoxBtn>
+                        </Bg>
+
+                        <Bg>
+                            <BoxBtn>
+                                <Callsvg></Callsvg>
+                            </BoxBtn>
+                        </Bg>
+                        <Bg>
+                            <BoxBtn1>
+                                <DotDotDotsvg></DotDotDotsvg>
+                            </BoxBtn1>
+                        </Bg>
+                    </BtnBox>
+                </CardContainer>
+                <CardContainer>
+                    <NIGGERsvg />
+                    <TextBox>
                         <Text1>
-                            Director of the pelmen factory at arduino
+                            Bradley Malone
                         </Text1>
-                        <ButtonsContainer>
-                            <ButtonContainer>
-                                <Button>
-                                    <Chatsvg />
-                                </Button>
-                            </ButtonContainer>
-                            <ButtonContainer2>
-                                <Button>
-                                    <Callsvg />
-                                </Button>
-                            </ButtonContainer2>
-                            <ButtonContainer3>
-                                <Button>
-                                    <DotDotDotsvg />
-                                </Button>
-                            </ButtonContainer3>
-                        </ButtonsContainer>
-                        <Boxicon>
-                            <NIGGERsvg></NIGGERsvg>
-                            <Status1></Status1>
-                        </Boxicon>
-                    </ContactContainer1>
-                    <ContactContainer1>
-                        <Text>
-                            Andrey Androsov
-                        </Text>
+                        <Text2>
+                            Sales Manager
+                        </Text2>
+                    </TextBox>
+                    <BtnBox>
+                        <Bg>
+                            <BoxBtn>
+                                <Chatsvg></Chatsvg>
+                            </BoxBtn>
+                        </Bg>
+
+                        <Bg>
+                            <BoxBtn>
+                                <Callsvg></Callsvg>
+                            </BoxBtn>
+                        </Bg>
+                        <Bg>
+                            <BoxBtn1>
+                                <DotDotDotsvg></DotDotDotsvg>
+                            </BoxBtn1>
+                        </Bg>
+                    </BtnBox>
+                </CardContainer>
+                <CardContainer>
+                    <NIGGERsvg />
+                    <TextBox>
                         <Text1>
-                            Director of the pelmen factory at arduino
+                            Bradley Malone
                         </Text1>
-                        <ButtonsContainer>
-                            <ButtonContainer>
-                                <Button>
-                                    <Chatsvg />
-                                </Button>
-                            </ButtonContainer>
-                            <ButtonContainer2>
-                                <Button>
-                                    <Callsvg />
-                                </Button>
-                            </ButtonContainer2>
-                            <ButtonContainer3>
-                                <Button>
-                                    <DotDotDotsvg />
-                                </Button>
-                            </ButtonContainer3>
-                        </ButtonsContainer>
-                        <Boxicon>
-                            <NIGGERsvg></NIGGERsvg>
-                            <Status1></Status1>
-                        </Boxicon>
-                    </ContactContainer1>
-                    <ContactContainer1>
-                        <Text>
-                            Andrey Androsov
-                        </Text>
+                        <Text2>
+                            Sales Manager
+                        </Text2>
+                    </TextBox>
+                    <BtnBox>
+                        <Bg>
+                            <BoxBtn>
+                                <Chatsvg></Chatsvg>
+                            </BoxBtn>
+                        </Bg>
+
+                        <Bg>
+                            <BoxBtn>
+                                <Callsvg></Callsvg>
+                            </BoxBtn>
+                        </Bg>
+                        <Bg>
+                            <BoxBtn1>
+                                <DotDotDotsvg></DotDotDotsvg>
+                            </BoxBtn1>
+                        </Bg>
+                    </BtnBox>
+                </CardContainer>
+                <CardContainer>
+                    <NIGGERsvg />
+                    <TextBox>
                         <Text1>
-                            Director of the pelmen factory at arduino
+                            Bradley Malone
                         </Text1>
-                        <ButtonsContainer>
-                            <ButtonContainer>
-                                <Button>
-                                    <Chatsvg />
-                                </Button>
-                            </ButtonContainer>
-                            <ButtonContainer2>
-                                <Button>
-                                    <Callsvg />
-                                </Button>
-                            </ButtonContainer2>
-                            <ButtonContainer3>
-                                <Button>
-                                    <DotDotDotsvg />
-                                </Button>
-                            </ButtonContainer3>
-                        </ButtonsContainer>
-                        <Boxicon>
-                            <NIGGERsvg></NIGGERsvg>
-                            <Status1></Status1>
-                        </Boxicon>
-                    </ContactContainer1>
-                    <ContactContainer1>
-                        <Text>
-                            Andrey Androsov
-                        </Text>
+                        <Text2>
+                            Sales Manager
+                        </Text2>
+                    </TextBox>
+                    <BtnBox>
+                        <Bg>
+                            <BoxBtn>
+                                <Chatsvg></Chatsvg>
+                            </BoxBtn>
+                        </Bg>
+
+                        <Bg>
+                            <BoxBtn>
+                                <Callsvg></Callsvg>
+                            </BoxBtn>
+                        </Bg>
+                        <Bg>
+                            <BoxBtn1>
+                                <DotDotDotsvg></DotDotDotsvg>
+                            </BoxBtn1>
+                        </Bg>
+                    </BtnBox>
+                </CardContainer>
+                <CardContainer>
+                    <NIGGERsvg />
+                    <TextBox>
                         <Text1>
-                            Director of the pelmen factory at arduino
+                            Bradley Malone
                         </Text1>
-                        <ButtonsContainer>
-                            <ButtonContainer>
-                                <Button>
-                                    <Chatsvg />
-                                </Button>
-                            </ButtonContainer>
-                            <ButtonContainer2>
-                                <Button>
-                                    <Callsvg />
-                                </Button>
-                            </ButtonContainer2>
-                            <ButtonContainer3>
-                                <Button>
-                                    <DotDotDotsvg />
-                                </Button>
-                            </ButtonContainer3>
-                        </ButtonsContainer>
-                        <Boxicon>
-                            <NIGGERsvg></NIGGERsvg>
-                            <Status1></Status1>
-                        </Boxicon>
-                    </ContactContainer1>
-                </ListContainer>
-            </Bg>
-        </Navbarcontainer>
+                        <Text2>
+                            Sales Manager
+                        </Text2>
+                    </TextBox>
+                    <BtnBox>
+                        <Bg>
+                            <BoxBtn>
+                                <Chatsvg></Chatsvg>
+                            </BoxBtn>
+                        </Bg>
+
+                        <Bg>
+                            <BoxBtn>
+                                <Callsvg></Callsvg>
+                            </BoxBtn>
+                        </Bg>
+                        <Bg>
+                            <BoxBtn1>
+                                <DotDotDotsvg></DotDotDotsvg>
+                            </BoxBtn1>
+                        </Bg>
+                    </BtnBox>
+                </CardContainer>
+
+            </ContentContainer>
+        </Container>
     )
 }
-
-
-const Bg = styled("div")`
-  position: absolute;
-  left: 0%;
-  right: 0%;
-  top: 0%;
-  bottom: 0.11%;
-
-  background: #FAF9FF;
-`
-const Boxicon = styled("div")`
+const BoxBtn1 = styled("div")`
   position: relative;
-  top: calc(50% - 36px / 2);
-  width: 38px;
-  height: 40px;
-  left: 18px;
-`
-const ButtonContainer = styled("div")`
-  position: absolute;
-  width: 36px;
-  height: 36px;
-  right: 84px;
-  top: 0px;
-
-`
-const ButtonContainer2 = styled("div")`
-  position: absolute;
-  width: 36px;
-  height: 36px;
-  right: 42px;
-  top: 0px;
-
-`
-const ButtonContainer3 = styled("div")`
-  position: absolute;
-  width: 36px;
-  height: 36px;
-  right: 0px;
-  top: 0px;
-
-`
-const Button = styled("div")`
-  position: absolute;
   width: 18px;
   height: 18px;
-  left: calc(50% - 18px / 2);
-  top: calc(50% - 18px / 2);
+  left: 25%;
+  top: 5%;
+  text-align: center;
+`
+const BoxBtn = styled("div")`
+  position: relative;
+  width: 18px;
+  height: 18px;
+  left: 25%;
+  top: 25%;
+  text-align: center;
+`
+export const Bg = styled("div")`
+  position: static;
+  background: #FFFFFF;
+  border: 1px solid #ECEEF5;
+  box-sizing: border-box;
+  border-radius: 10px;
+  width: 36px;
+  height: 36px;
+`
+const BtnBox = styled("div")`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
 
-  font-family: Material Icons;
+  position: relative;
+  width: 120px;
+  height: 42px;
+  top: 0%;
+
+  flex: none;
+  order: 2;
+  align-self: stretch;
+  flex-grow: 0;
+  margin: 0px 5px;
+`
+const Text2 = styled("div")`
+  width: 100%;
+  height: 21px;
+  font-family: Lato;
   font-style: normal;
   font-weight: normal;
-  font-size: 1px;
-  line-height: 18px;
-  /* identical to box height */
-
-  text-align: center;
-
+  font-size: 14px;
+  line-height: 21px;
   color: #8083A3;
 `
-const ButtonsContainer = styled("div")`
-  position: absolute;
-  width: 120px;
-  height: 36px;
-  right: 18px;
-  top: calc(50% - 36px / 2);
-`
-const Text = styled("div")`
-  position: absolute;
-  width: 150%;
+const Text1 = styled("div")`
+  width: 100%;
   height: 21px;
-  left: 72px;
-  top: calc(50% - 21px / 2 - 9.5px);
-
   font-family: Lato;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
   line-height: 21px;
-  /* identical to box height, or 150% */
-
-
   color: #1A1C1D;
 `
-const Text1 = styled("div")`
-  position: absolute;
-  width: 150%;
-  height: 21px;
-  left: 72px;
-  top: calc(50% - 21px / 2 + 9.5px);
-
-  font-family: Lato;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 21px;
-  /* identical to box height, or 150% */
-
-
-  color: #8083A3;
-
-`
-const Status1 = styled("div")`
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  left: 30px;
-  top: calc(50% - 8px / 2 + 16px);
-
-  background: #28C345;
-`
-const ContactContainer1 = styled("div")`
-  position: relative;
-  width: 522px;
-  height: 68px;
-  resize: both;
-`
-
-/*---------------------------------------------------------------------------*/
-
-const ListContainer = styled("div")`
+const TextBox = styled("div")`
   display: flex;
   flex-direction: column;
-  margin: 200px 0px 0px 15px;
-  width: 522px;
-  height: 686px;
-  left: 15px;
-  top: 180px;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0px;
+
+  position: static;
+  width: 127px;
+  height: 42px;
+  left: 156.5px;
+  top: 14px;
+
+
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  margin: 0px 80px;
 `
-const Searchicon = styled("div")`
-  position: absolute;
-  width: 18px;
+const Img = styled("div")`
+  position: static;
+  width: 38px;
+  height: 40px;
+  left: 18px;
+  top: 15px;
+
+
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 0;
+  align-self: center;
+  flex-grow: 0;
+  margin: 0px 100px;
+`
+const CardContainer = styled("div")`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px 12px;
+
+  position: relative;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+
+  background: #D8D8D8;
+  border-radius: 12px;
+`
+const Icon = styled("div")`
+  position: relative;
   height: 18px;
-  right: 0px;
-  top: calc(50% - 18px / 2 + 15px);
-  font-family: Material Icons;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 18px;
-  /* identical to box height */
-
-  text-align: center;
-
-  color: #1D1D24;
+  width: 29px;
+  left: 230%;
+  top: -50%;
+  border-radius: 0;
 `
-const Secondtext = styled("div")`
-  position: absolute;
-  width: 328px;
+const PBox = styled("div")`
+  padding: 0% 0% 4% 0%;
+`
+const P1 = styled("div")`
   height: 19px;
-  left: 0px;
-  top: calc(50% - 19px / 2 + 14.5px);
-
+  width: 100%;
+  top: 150px;
+  border-radius: 0;
   font-family: Lato;
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
   line-height: 19px;
-
-  color: #1A1C1D;
 `
-const Firsttext = styled("div")`
-  position: absolute;
-  width: 187px;
-  height: 21px;
-  left: 0px;
-  top: calc(50% - 21px / 2 - 13.5px);
-
+const P = styled("div")`
+  position: static;
+  height: 20%;
+  weight: 100%;
   font-family: Lato;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 21px;
-  /* identical to box height, or 150% */
-
-
   color: #8083A3;
+  padding: 0;
 `
-const Searchfield = styled("div")`
-  position: absolute;
-  left: 5.8%;
-  right: 8.15%;
-  top: 12.43%;
-  bottom: 82.24%;
+const Header = styled("div")`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 10%;
+  width: 100%;
+  border-radius: 0px;
 
 `
-const Navbarcontainer = styled("div")`
+const ContentContainer = styled("div")`
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+
+  position: static;
+  width: 522px;
+  height: 818px;
+  left: 15px;
+  top: 83px;
+
+`
+const Container = styled("div")`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 83px 0px 0px 0px;
+
   position: absolute;
   width: 552px;
   height: 901px;
   left: 84px;
-  top: 31px;
+  top: 15px;
 
+  background: #FAF9FF;
 `

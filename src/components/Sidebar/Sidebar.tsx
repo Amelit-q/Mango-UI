@@ -11,250 +11,70 @@ import {ReactComponent as Searchsvg} from "../../assets/imgNavbar/Searchicon.svg
 
 export const Sidebar = () => {
     return (
-        <NavBarContainer>
-            <AContainer>
-                <APicture>
-                </APicture>
-            </AContainer>
-            <LinkContainer>
-                <HomeContainer>
-                    <HomePicture>
+        <Wrapper>
+            <Container>
+                <Logo>
+                    <Homesvg/>
+                </Logo>
+                <BtnBox>
+                    <Ul>
                         <Homesvg />
-                    </HomePicture>
-                </HomeContainer>
-                <ChatContainer>
-                    <ChatPicture>
+                    </Ul>
+                    <Ul>
                         <Chatsvg />
-                    </ChatPicture>
-                </ChatContainer>
-                <CallContainer>
-                    <CallPicture>
+                    </Ul>
+                    <Ul>
                         <Callsvg />
-                    </CallPicture>
-                </CallContainer>
-                <ContactContainer>
-                    <ContactPicture>
+                    </Ul>
+                    <Ul>
                         <Contactsvg />
-                    </ContactPicture>
-                </ContactContainer>
-                <OptionContainer>
-                    <OptionPicture>
-                        <Optionsvg />
-                    </OptionPicture>
-                </OptionContainer>
-                <SerachContainer>
-                    <SearchPicture>
+                    </Ul>
+                    <Ul>
                         <Searchsvg />
-                    </SearchPicture>
-                </SerachContainer>
-            </LinkContainer>
-            <Line></Line>
-        </NavBarContainer>
+                    </Ul>
+                    <Ul>
+                        <Optionsvg/>
+                    </Ul>
+                </BtnBox>
+            </Container>
+            <Footer></Footer>
+        </Wrapper>
     )
+
 }
 
 
-const SearchPicture = styled("div")`
-  position: absolute;
-  height: 22px;
-  left: 36.9%;
-  right: 36.9%;
-  top: calc(50% - 22px / 2);
-  font-family: Material Icons;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 22px;
-  line-height: 22px;
-  /* identical to box height */
-
-  text-align: center;
-
-  color: #6B59CC;
-
+const Footer = styled("div")`
+  flex: 1 0 auto;
+  display: flex;
 `
-const SerachContainer = styled("div")`
-  position: absolute;
-  height: 72px;
-  left: 0%;
-  right: 0%;
-  top: 313px;
-
+const Logo = styled("div")`
+  display: flex;
+  margin: 0 0 144px 0;
 `
-
-const Line = styled("div")`
-  display: inline-block;
-  position: absolute;
-  left: 83px;
-  height: 100%;
-  border: 1px solid #ECEEF5;
-  box-sizing: border-box;
-
+const Ul = styled("ul")`
+  display: flex;
+  padding-left: 0;
+  flex-direction: column;
+  padding-bottom: 80px;
+  margin: 0;
 `
-
-const APicture = styled("div")`
-  position: absolute;
-  left: 0%;
-  right: 0%;
-  top: 0%;
-  bottom: 0%;
-
-  background: #28b463;
-  border-radius: 14px;
-`
-
-const AContainer = styled("div")`
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  left: 22px;
-  top: 22px;
-`
-
-const OptionContainer = styled("div")`
-  position: absolute;
-  height: 72px;
-  left: 0%;
-  right: 0%;
-  top: 385px;
-`
-
-const OptionPicture = styled("div")`
-  position: absolute;
-  height: 22px;
-  left: 36.9%;
-  right: 36.9%;
-  top: calc(50% - 22px / 2);
-
-  font-family: Material Icons;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 22px;
-  line-height: 22px;
-  /* identical to box height */
-
-  text-align: center;
-
-  color: #8083A3;
-`
-
-const ContactPicture = styled("div")`
-  position: absolute;
-  width: 22px;
-  height: 22px;
-  left: calc(50% - 22px / 2);
-  top: calc(50% - 22px / 2);
-
-  font-family: Material Icons;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 22px;
-  line-height: 22px;
-  /* identical to box height */
-
-  text-align: center;
-
-  color: #28b463;
-
-`
-
-const ContactContainer = styled("div")`
-  position: absolute;
-  height: 72px;
-  left: 0%;
-  right: 0%;
-  top: 241px;
-
-`
-
-const CallPicture = styled("div")`
-  position: absolute;
-  height: 22px;
-  left: 36.9%;
-  right: 36.9%;
-  top: calc(50% - 22px / 2);
-
-  font-family: Material Icons;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 22px;
-  line-height: 22px;
-  /* identical to box height */
-
-  text-align: center;
-
-  color: #8083A3;
-`
-
-const CallContainer = styled("div")`
-  position: absolute;
-  height: 72px;
-  left: 0%;
-  right: 0%;
-  top: 169px;
-`
-
-const ChatPicture = styled("div")`
-  position: absolute;
-  height: 22px;
-  left: 36.9%;
-  right: 36.9%;
-  top: calc(50% - 22px / 2);
-
-  font-family: Material Icons;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 22px;
-  line-height: 22px;
-  /* identical to box height */
-
-  text-align: center;
-
-  color: #8083A3;
-`
-
-const ChatContainer = styled("div")`
-  position: absolute;
-  height: 72px;
-  left: 0%;
-  right: 0%;
-  top: 97px;
-
-`
-
-const NavBarContainer = styled("nav")`
+const BtnBox = styled("div")`
   display: flex;
   flex-direction: column;
-  background: #FFFFFF;
-
+  height: 100%;
+  flex-grow: 1;
 `
-
-const LinkContainer = styled("div")`
-  position: absolute;
+const Container = styled("div")`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px 15px;
   width: 84px;
-  height: 576px;
-  left: 0px;
-  top: 181px;
+  min-height: 100%;
+  flex: 1 0 auto;
 `
-
-const HomePicture = styled("div")`
-
-  font-family: Material Icons;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 22px;
-  line-height: 22px;
-  /* identical to box height */
-
-  text-align: center;
-
-  color: #8083A3;
-`
-
-const HomeContainer = styled("div")`
-
-  position: relative;
-  height: 72px;
-  left: 0%;
-  right: 0%;
-  top: 25px;
+const Wrapper = styled("div")`
+  max-width: 100%;
+  margin: 0px auto;
 `
