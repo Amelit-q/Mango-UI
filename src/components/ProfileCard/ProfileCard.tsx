@@ -8,12 +8,13 @@ import {ReactComponent as Iconbtnmore} from "../../assets/imgCardProfile/Iconbtn
 import {ReactComponent as PhoneIcon} from "../../assets/imgCardProfile/PhoneIcon.svg"
 import {ReactComponent as ShareIcon} from "../../assets/imgCardProfile/ShareIcon.svg"
 import {ReactComponent as ProfileLogo} from "../../assets/imgCardProfile/ProfileLogo.svg"
+import {ReactComponent as MessageIcon} from "../../assets/imgCardProfile/MessageIcon.svg"
+
 export const ProfileCard = () => {
     return (
         <CardProfile>
             <ProfileHead>
                 <ProfileLogoDiv>
-                    {" "}
                     <ProfileLogo />
                 </ProfileLogoDiv>
                 <ProfileTitle>
@@ -23,11 +24,13 @@ export const ProfileCard = () => {
                         <BtnProfileMssage>
                             <LinkProfileMessage>
                                 <TextButtonProfileMessage>Message</TextButtonProfileMessage>
+                                <ContainerMessageIcon>
+                                    <MessageIcon />
+                                </ContainerMessageIcon>
                             </LinkProfileMessage>
                         </BtnProfileMssage>
                     </FrameProfileTitle>
                 </ProfileTitle>
-                {/* */}
                 <ShareBtn>
                     <ShareBtnLink>
                         <ShareIcon />
@@ -35,7 +38,6 @@ export const ProfileCard = () => {
                 </ShareBtn>
                 <BtmMore>
                     <MoreIconDiv>
-                        {" "}
                         <Iconbtnmore />
                     </MoreIconDiv>
                 </BtmMore>
@@ -78,533 +80,58 @@ export const ProfileCard = () => {
                 <TextSocialMedia> Social </TextSocialMedia>
                 <ContGoogleIcon>
                     <IconBtn>
-                        <IconStyleBtn>
-                            <GoogleIcon />
-                        </IconStyleBtn>
+                        <GoogleIcon />
                     </IconBtn>
                 </ContGoogleIcon>
                 <ContPinIcon>
                     <IconBtn>
-                        <IconStyleBtn>
-                            <PinIcon />
-                        </IconStyleBtn>
+                        <PinIcon />
                     </IconBtn>
                 </ContPinIcon>
                 <ContTwIcon>
                     <IconBtn>
-                        <IconStyleBtn>
-                            <TwIcon />
-                        </IconStyleBtn>
+                        <TwIcon />
                     </IconBtn>
                 </ContTwIcon>
                 <ContInIcon>
                     <IconBtn>
-                        <IconStyleBtn>
-                            <Inicon />
-                        </IconStyleBtn>
+                        <Inicon />
                     </IconBtn>
                 </ContInIcon>
             </Social>
         </CardProfile>
     )
 }
-const ProfileLogoDiv = styled("div")`
-    position: static;
-    width: 114px;
-    height: 114px;
-    left: 0px;
-    top: 0.5px;
 
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 0;
-    align-self: center;
-    flex-grow: 0;
-    margin: 0px 12.3333px;
-`
-const LinkProfileMessage = styled("div")`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px;
-
-    position: absolute;
-    left: 18px;
-    right: 17px;
-    top: 25.21%;
-    bottom: 29.55%;
-`
-const TextButtonProfileMessage = styled("div")`
-    position: static;
-    height: 19px;
-    left: 27.59%;
-    right: 0%;
-    top: calc(50% - 19px / 2);
-
-    font-family: Lato;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 19px;
-
-    color: #ffffff;
-`
-const BtnProfileMssage = styled("div")`
-    position: static;
-    left: 14.12%;
-    right: 14.12%;
-    top: 0%;
-    bottom: 0%;
-
-    background: #6b59cc;
-    border-radius: 10px;
-
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 0;
-    align-self: center;
-    flex-grow: 0;
-    margin: 0px 6px;
-`
-const FrameProfileTitle = styled("div")`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px;
-
-    position: static;
-    width: 170px;
-    height: 42px;
-    left: 0px;
-    top: 73px;
-
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 2;
-    align-self: stretch;
-    flex-grow: 0;
-    margin: 11px 0px;
-`
-const BodyProfesion = styled("p")`
-    position: static;
-    width: 170px;
-    height: 21px;
-    left: 0px;
-    top: calc(50% - 21px / 2 - 6px);
-
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 21px;
-    /* identical to box height, or 150% */
-
-    color: #8083a3;
-
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 1;
-    align-self: stretch;
-    flex-grow: 0;
-    margin: 11px 0px;
-`
-const TitleProfile = styled("p")`
-    position: static;
-    height: 32px;
-    left: 0%;
-    right: 0%;
-    top: calc(50% - 32px / 2 - 43.5px);
-
-    font-family: Lato;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 32px;
-    /* identical to box height, or 160% */
-
-    color: #1a1c1d;
-
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 0;
-    margin: 11px 0px;
-`
-const ProfileTitle = styled("div")`
-    /* Auto Layout */
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 0px;
-
-    position: static;
-    width: 170px;
-    height: 115px;
-    left: 171.25px;
-    top: 0px;
-
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 1;
-    align-self: stretch;
-    flex-grow: 0;
-    margin: 0px 12.3333px;
-`
-const ShareBtnLink = styled("div")`
-    position: static;
-    left: 62.36%;
-    right: 31.06%;
-    top: 63.48%;
-    bottom: 0%;
-
-    background: #ffffff;
-    border: 1px solid #eceef5;
-    box-sizing: border-box;
-    border-radius: 10px;
-
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 2;
-    flex-grow: 0;
-    margin: 0px 12.3333px;
-`
-const ShareBtn = styled("div")`
-    position: static;
-    left: 93.43%;
-    right: 0%;
-    top: 31.74%;
-    bottom: 31.74%;
-
-    background: #ffffff;
-    border: 1px solid #eceef5;
-    box-sizing: border-box;
-    border-radius: 10px;
-
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 4;
-    align-self: center;
-    flex-grow: 0;
-    margin: 0px 12.3333px;
-    padding: 0.9%;
-`
-const MoreBtnPhone = styled("div")`
-    position: initial;
-    width: 18px;
-    height: 18px;
-    left: calc(50% - 18px / 2);
-    top: calc(50% - 18px / 2);
-
-    font-family: Material Icons;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 18px;
-    /* identical to box height */
-
-    text-align: center;
-
-    color: #8083a3;
-    padding: 0.9%;
-`
-const BtnPhone = styled("div")`
-    position: static;
-    left: 77.9%;
-    right: 15.53%;
-    top: 31.74%;
-    bottom: 31.74%;
-
-    background: #ffffff;
-    border: 1px solid #eceef5;
-    box-sizing: border-box;
-    border-radius: 10px;
-
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 3;
-    align-self: center;
-    flex-grow: 0;
-    margin: 0px 12.3333px;
-    padding: 0.9%;
-`
-const MoreIconDiv = styled("div")`
-    position: initial;
-    width: 18px;
-    height: 18px;
-    left: calc(50% - 18px / 2);
-    top: calc(50% - 18px / 2);
-
-    font-family: Material Icons;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 18px;
-    /* identical to box height */
-
-    text-align: center;
-
-    color: #8083a3;
-`
-
-const BtmMore = styled("div")`
-    position: static;
-    left: 93.43%;
-    right: 0%;
-    top: 31.74%;
-    bottom: 31.74%;
-
-    background: #ffffff;
-    border: 1px solid #eceef5;
-    box-sizing: border-box;
-    border-radius: 10px;
-
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 4;
-    align-self: center;
-    flex-grow: 0;
-    margin: 0px 12.3333px;
-    padding: 0.9%;
-`
-const FrameEmailText = styled("div")`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0px;
-
-    position: static;
-    width: 212px;
-    height: 56px;
-    left: 192.5px;
-    top: 0px;
-
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 1;
-    align-self: stretch;
-    flex-grow: 1;
-    margin: 0px 158.5px;
-`
-const TextinFrameEmail1 = styled("p")`
-    position: static;
-    height: 21px;
-    left: 0%;
-    right: 0%;
-    top: calc(50% - 21px / 2 - 17.5px);
-
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 21px;
-    /* identical to box height, or 150% */
-
-    color: #1a1c1d;
-
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 0;
-    margin: 5px 0px;
-`
-const TextinFrameEmail2 = styled("p")`
-    position: static;
-    height: 21px;
-    left: 0%;
-    right: 0%;
-    top: calc(50% - 21px / 2 - 17.5px);
-
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 21px;
-    /* identical to box height, or 150% */
-
-    color: #1a1c1d;
-
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 1;
-    align-self: stretch;
-    flex-grow: 0;
-    margin: 0px 0px;
-`
-const FrameBioText = styled("p")`
-    position: static;
-    height: 42px;
-    left: 0%;
-    right: 0%;
-    top: calc(50% - 42px / 2);
-
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 21px;
-    /* or 150% */
-
-    color: #1a1c1d;
-
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-    margin: 0px 35.8515px;
-`
-const FrameBio = styled("div")`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 0px;
-
-    position: static;
-    width: 639px;
-    height: 42px;
-    left: 0px;
-    top: 0px;
-
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 0;
-    margin: 23px 0px;
-`
 const TextDialMedia = styled("div")`
-    position: static;
-    height: 21px;
-    left: 30.36%;
-    right: 0%;
-    top: calc(50% - 21px / 2);
-
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
     font-size: 14px;
-    line-height: 21px;
-    /* identical to box height, or 150% */
-
     color: #1a1c1d;
-
-    /* Inside Auto Layout */
-
-    flex: none;
     order: 1;
     flex-grow: 1;
     margin: 0px 34px;
 `
-const FrameTextPhone1 = styled("p")`
-    position: static;
-    height: 21px;
-    left: 0%;
-    right: 0%;
-    top: calc(50% - 21px / 2 - 17.5px);
-
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
+const FrameTextPhone = styled("p")`
     font-size: 14px;
-    line-height: 21px;
-    /* identical to box height, or 150% */
-
-    color: #1a1c1d;
-
-    /* Inside Auto Layout */
-
-    flex: none;
+    color: #1a1c1d
     order: 0;
     align-self: stretch;
     flex-grow: 0;
     margin: 5px 0px;
 `
-const FrameTextPhone2 = styled(FrameTextPhone1)`
-    position: static;
-    height: 21px;
-    left: 0%;
-    right: 0%;
-    top: calc(50% - 21px / 2 - 17.5px);
-
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 21px;
-    /* identical to box height, or 150% */
-
-    color: #1a1c1d;
-
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 0;
-    margin: 0px 0px;
-`
+const FrameTextPhone1 = styled(FrameTextPhone)``
+const FrameTextPhone2 = styled(FrameTextPhone)``
 const FrameBlockPhone = styled("div")`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0px;
-
-    position: static;
-    width: 106px;
-    height: 56px;
-    left: 248.5px;
-    top: 0px;
-
-    /* Inside Auto Layout */
-
-    flex: none;
     order: 1;
     align-self: stretch;
     flex-grow: 1;
     margin: 0px 208.5px;
 `
-const IconStyleBtn = styled("div")`
-    position: static;
-    width: 16px;
-    height: 16px;
-    left: calc(50% - 16px / 2);
-    top: calc(50% - 16px / 2);
-`
 const IconBtn = styled("button")`
-    position: static;
-    left: 93.74%;
-    right: 0%;
-    top: 0%;
-    bottom: 0%;
-
     background: #ffffff;
-    border: 1px solid #eceef5;
-    box-sizing: border-box;
-    border-radius: 10px;
-
-    /* Inside Auto Layout */
     wight: 40px;
-    flex: none;
     order: 5;
     align-self: center;
     flex-grow: 0;
@@ -612,169 +139,295 @@ const IconBtn = styled("button")`
     border: none;
     outline: none;
 `
-const ContInIcon = styled("div")`
-    position: static;
-    left: 93.74%;
-    right: 0%;
-    top: 0%;
-    bottom: 0%;
-
+const BtnSocialMedia = styled("div")`
     background: #ffffff;
     border: 1px solid #eceef5;
     box-sizing: border-box;
     border-radius: 10px;
 
-    /* Inside Auto Layout */
-
-    flex: none;
+    align-self: center;
+    flex-grow: 0;
+    margin: 0px 5px;
+`
+const ContInIcon = styled(BtnSocialMedia)`
     order: 5;
-    align-self: center;
-    flex-grow: 0;
-    margin: 0px 11.8px;
-    margin-right: 25%;
+    margin-right: 22%;
 `
-
-const ContPinIcon = styled("div")`
-    position: static;
-    left: 77.53%;
-    right: 16.21%;
-    top: 0%;
-    bottom: 0%;
-
-    background: #ffffff;
-    border: 1px solid #eceef5;
-    box-sizing: border-box;
-    border-radius: 10px;
-
-    /* Inside Auto Layout */
-
-    flex: none;
+const ContPinIcon = styled(BtnSocialMedia)`
     order: 3;
-    align-self: center;
-    flex-grow: 0;
-    margin: 0px 11.8px;
 `
-const ContTwIcon = styled("div")`
-    wight: 40px;
-
-    position: static;
-    left: 69.42%;
-    right: 24.32%;
-    top: 0%;
-    bottom: 0%;
-
-    background: #ffffff;
-    border: 1px solid #eceef5;
-    box-sizing: border-box;
-    border-radius: 10px;
-
-    /* Inside Auto Layout */
-
-    flex: none;
+const ContTwIcon = styled(BtnSocialMedia)`
     order: 2;
-    align-self: center;
-    flex-grow: 0;
-    margin: 10px 11.8px;
 `
-const ContGoogleIcon = styled("div")`
-    position: static;
-    left: 61.31%;
-    right: 32.43%;
-    top: 0%;
-    bottom: 0%;
-
-    background: #ffffff;
-    border: 1px solid #eceef5;
-    box-sizing: border-box;
-    border-radius: 10px;
-
-    /* Inside Auto Layout */
-
-    flex: none;
+const ContGoogleIcon = styled(BtnSocialMedia)`
     order: 1;
-    align-self: center;
-    flex-grow: 0;
-    margin: 0px 11.8px;
 `
+// * * Style profile head
 const ProfileHead = styled("div")`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 0px;
-
-    position: static;
-    width: 639px;
-    height: 115px;
-    left: calc(50% - 639px / 2);
-    top: 0px;
-
-    /* Inside Auto Layout */
-
-    flex: none;
     order: 0;
     align-self: stretch;
     flex-grow: 0;
-    margin: 0px 0px;
 `
+const ProfileLogoDiv = styled("div")`
+    width: 114px;
+    height: 114px;
+    order: 0;
+    align-self: center;
+    flex-grow: 0;
+    margin: 0px 12.3333px;
+`
+const ProfileTitle = styled("div")`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 0px 12.3333px;
+`
+
+const TitleProfile = styled("p")`
+    font-weight: bold;
+    font-size: 20px;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 11px 0px;
+`
+const BodyProfesion = styled("p")`
+    font-size: 14px;
+    line-height: 21px;
+    color: #8083a3;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 5px 0px;
+`
+
+const FrameProfileTitle = styled("div")`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    order: 2;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 11px 0px;
+`
+
+const BtnProfileMssage = styled("button")`
+    background: #6b59cc;
+    border-radius: 10px;
+    order: 0;
+    align-self: center;
+    flex-grow: 0;
+    margin: 0px 6px;
+    border: 0;
+
+`
+
+const LinkProfileMessage = styled("div")`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2px;
+`
+
+const TextButtonProfileMessage = styled("div")`
+    height: 19px;
+    font-family: system-ui;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    color: #ffffff;
+    order: 1;
+    flex-grow: 0;
+    margin: 0px 6px;
+    padding: 2px;
+`
+
+const ContainerMessageIcon = styled("div")`
+    width: 18px;
+    height: 18px;
+    font-family: Material Icons;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 18px;
+
+    text-align: center;
+
+    color: #fafbff;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 6px;
+`
+// * * Btn Profile head Share
+// Button share
+const ShareBtn = styled("div")`
+    border: 1px solid #eceef5;
+    box-sizing: border-box;
+    border-radius: 10px;
+
+    order: 4;
+    align-self: center;
+    flex-grow: 0;
+    padding: 1.2%;
+`
+
+const ShareBtnLink = styled("div")`
+    order: 2;
+    flex-grow: 0;
+    margin: 0px 12.3333px;
+`
+// Button more
+const BtmMore = styled("div")`
+    border: 1px solid #eceef5;
+    box-sizing: border-box;
+    border-radius: 10px;
+
+    order: 4;
+    align-self: center;
+    flex-grow: 0;
+    margin: 0px 12.3333px;
+    padding: 1.5%;
+`
+const MoreIconDiv = styled("div")`
+    font-family: Material Icons;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    color: #8083a3;
+`
+// Button Phone
+const BtnPhone = styled("div")`
+    border: 1px solid #eceef5;
+    box-sizing: border-box;
+    border-radius: 10px;
+    order: 3;
+    align-self: center;
+    flex-grow: 0;
+    margin: 0px 12.3333px;
+    padding: 1.5%;
+`
+const MoreBtnPhone = styled("div")`
+    font-family: Material Icons;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    color: #8083a3;
+    padding: 0.9%;
+`
+// * * Bio frame
 const Bio = styled("div")`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 0px;
-
-    position: static;
-    width: 639px;
     height: 67px;
-    left: calc(50% - 639px / 2);
-    top: 143px;
-
-    /* Inside Auto Layout */
-
-    flex: none;
     order: 1;
     align-self: stretch;
-    flex-grow: 0;
     margin: 15px 0px;
 `
+// bio container
+const FrameBio = styled("div")`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 23px 0px;
+`
+// bio text
+const FrameBioText = styled("p")`
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+
+    color: #1a1c1d;
+
+    order: 1;
+    flex-grow: 0;
+    margin: 0px 35.8515px;
+`
+// * * Email line
 const Email = styled("div")`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 0px;
 
-    position: static;
-    width: 639px;
-    height: 56px;
-    left: calc(50% - 639px / 2);
-    top: 238px;
-
-    /* Inside Auto Layout */
-
-    flex: none;
     order: 2;
     align-self: stretch;
     flex-grow: 0;
     margin: 15px 0px;
 `
+// text Email
+const TextSocialMedia = styled("p")`
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+
+    color: #8083a3;
+
+    order: 0;
+    flex-grow: 1;
+    margin: 0px 34px;
+`
+// frame Email Text
+const FrameEmailText = styled("div")`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    order: 1;
+    align-self: stretch;
+    flex-grow: 1;
+    margin: 0px 158.5px;
+`
+// text Email
+const TextEmail = styled("p")`
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 21px;
+
+    color: #1a1c1d;
+
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 5px 0px;
+`
+const TextinFrameEmail1 = styled(TextEmail)``
+const TextinFrameEmail2 = styled(TextEmail)`
+    order: 1;
+`
+// * * Dial frame
 const Dial = styled("div")`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0px;
 
-    position: static;
-    width: 639px;
-    height: 21px;
-    left: calc(50% - 639px / 2);
-    top: 322px;
-
-    /* Inside Auto Layout */
-
-    flex: none;
     order: 3;
     align-self: stretch;
     flex-grow: 0;
@@ -785,17 +438,7 @@ const Meeting = styled("div")`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0px;
 
-    position: static;
-    width: 639px;
-    height: 21px;
-    left: calc(50% - 639px / 2);
-    top: 371px;
-
-    /* Inside Auto Layout */
-
-    flex: none;
     order: 4;
     align-self: stretch;
     flex-grow: 0;
@@ -806,65 +449,17 @@ const Phone = styled("div")`
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 0px;
 
-    position: static;
-    width: 639px;
-    height: 56px;
-    left: calc(50% - 639px / 2);
-    top: 420px;
-
-    /* Inside Auto Layout */
-
-    flex: none;
     order: 5;
     align-self: stretch;
     flex-grow: 0;
     margin: 15px 0px;
 `
-const TextSocialMedia = styled("p")`
-    position: static;
-    height: 21px;
-    left: 0%;
-    right: 74.96%;
-    top: calc(50% - 21px / 2);
-
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 21px;
-    /* identical to box height, or 150% */
-
-    color: #8083a3;
-
-    /* Inside Auto Layout */
-
-    flex: none;
-    order: 0;
-    flex-grow: 1;
-    margin: 0px 34px;
-`
 const Social = styled("div")`
-    /* Social */
-
-    /* Auto Layout */
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0px;
-
-    position: static;
-    width: 639px;
-    height: 40px;
-    left: calc(50% - 639px / 2);
-    top: 504px;
-
-    /* Inside Auto Layout */
-
-    flex: none;
     order: 6;
     align-self: stretch;
     flex-grow: 0;
@@ -876,11 +471,10 @@ const CardProfile = styled("div")`
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    padding: 0px;
 
     position: absolute;
     width: 639px;
     height: 600px;
-    left: 694px;
+    left: 504px;
     top: 50px;
 `
