@@ -11,6 +11,16 @@ import {ReactComponent as ProfileLogo} from "../../assets/imgCardProfile/Profile
 import {ReactComponent as MessageIcon} from "../../assets/imgCardProfile/MessageIcon.svg"
 
 export const ProfileCard = () => {
+    // * Render Icon Media
+    const ContactsIcon = [<GoogleIcon />, <PinIcon />, <TwIcon />, <Inicon />]
+    const RenderMediaIcon = ContactsIcon.map((RenderIconMedia) => <BtnSocialMedia> {RenderIconMedia} </BtnSocialMedia>)
+    // * Render User Phone Number
+    const UserPhoneNumber = ["0 991-123329", "0 222-123329"]
+    const RenderUserPhoneNumber = UserPhoneNumber.map((RenderUserPhoneNumber) => <FrameTextPhone>{RenderUserPhoneNumber} </FrameTextPhone>)
+    // * Render User Email
+    const UserEmail = ["johanna.stevens@gmail.com", "johanna.stevens@whiteui.store"]
+    const RenderUserEmail = UserEmail.map((RenderUserEmail) => <TextEmail>{RenderUserEmail} </TextEmail>)
+
     return (
         <CardProfile>
             <ProfileHead>
@@ -49,66 +59,48 @@ export const ProfileCard = () => {
             </ProfileHead>
             <Bio>
                 <FrameBio>
-                    <FrameBioText>
-                        When I first got into the advertising, <br /> I was looking for the magical combination that would put website into the top search engine rankings{" "}
-                    </FrameBioText>
+                    <FrameBioText>When I first got into the advertising, I was looking for the magical combination that would put website into the top search engine rankings</FrameBioText>
                 </FrameBio>
             </Bio>
             <Email>
-                <TextSocialMedia> Email </TextSocialMedia>
-                <FrameEmailText>
-                    <TextinFrameEmail1> johanna.stevens@gmail.com</TextinFrameEmail1>
-                    <TextinFrameEmail2> johanna.stevens@whiteui.store</TextinFrameEmail2>
-                </FrameEmailText>
+                <ContainerTextSocial>
+                    <TextSocialMedia> Email </TextSocialMedia>
+                </ContainerTextSocial>
+                <FrameEmailText>{RenderUserEmail}</FrameEmailText>
             </Email>
             <Dial>
                 <TextSocialMedia> Dial </TextSocialMedia>
                 <TextDialMedia>j.stevens@ymsg.com</TextDialMedia>
             </Dial>
             <Meeting>
-                <TextSocialMedia> Meeting </TextSocialMedia>
+                <ContainerTextSocial>
+                    <TextSocialMedia> Meeting </TextSocialMedia>{" "}
+                </ContainerTextSocial>
+
                 <TextDialMedia>http://go.betacall.com/meet/j.stevens</TextDialMedia>
             </Meeting>
             <Phone>
-                <FrameBlockPhone>
-                    <FrameTextPhone1> 0 991-123329 </FrameTextPhone1>
-                    <FrameTextPhone2> 0 991-123329 </FrameTextPhone2>
-                </FrameBlockPhone>
-                <TextSocialMedia> Phone </TextSocialMedia>
+                <FrameBlockPhone>{RenderUserPhoneNumber}</FrameBlockPhone>
+                <ContainerTextSocial>
+                    <TextSocialMedia> Phone </TextSocialMedia>
+                </ContainerTextSocial>
             </Phone>
             <Social>
-                <TextSocialMedia> Social </TextSocialMedia>
-                <ContGoogleIcon>
-                    <IconBtn>
-                        <GoogleIcon />
-                    </IconBtn>
-                </ContGoogleIcon>
-                <ContPinIcon>
-                    <IconBtn>
-                        <PinIcon />
-                    </IconBtn>
-                </ContPinIcon>
-                <ContTwIcon>
-                    <IconBtn>
-                        <TwIcon />
-                    </IconBtn>
-                </ContTwIcon>
-                <ContInIcon>
-                    <IconBtn>
-                        <Inicon />
-                    </IconBtn>
-                </ContInIcon>
+                <ContainerTextSocial>
+                    <TextSocialMedia> Social </TextSocialMedia>
+                </ContainerTextSocial>
+                {RenderMediaIcon}
             </Social>
         </CardProfile>
     )
 }
+const ContainerTextSocial = styled("div")``
 
 const TextDialMedia = styled("div")`
     font-size: 14px;
     color: #1a1c1d;
     order: 1;
     flex-grow: 1;
-    margin: 0px 34px;
 `
 const FrameTextPhone = styled("p")`
     font-size: 14px;
@@ -118,8 +110,7 @@ const FrameTextPhone = styled("p")`
     flex-grow: 0;
     margin: 5px 0px;
 `
-const FrameTextPhone1 = styled(FrameTextPhone)``
-const FrameTextPhone2 = styled(FrameTextPhone)``
+
 const FrameBlockPhone = styled("div")`
     display: flex;
     flex-direction: column;
@@ -127,18 +118,9 @@ const FrameBlockPhone = styled("div")`
     order: 1;
     align-self: stretch;
     flex-grow: 1;
-    margin: 0px 208.5px;
+    padding: 5px;
 `
-const IconBtn = styled("button")`
-    background: #ffffff;
-    wight: 40px;
-    order: 5;
-    align-self: center;
-    flex-grow: 0;
-    margin: 10px 11.8px;
-    border: none;
-    outline: none;
-`
+
 const BtnSocialMedia = styled("div")`
     background: #ffffff;
     border: 1px solid #eceef5;
@@ -148,19 +130,7 @@ const BtnSocialMedia = styled("div")`
     align-self: center;
     flex-grow: 0;
     margin: 0px 5px;
-`
-const ContInIcon = styled(BtnSocialMedia)`
-    order: 5;
-    margin-right: 22%;
-`
-const ContPinIcon = styled(BtnSocialMedia)`
-    order: 3;
-`
-const ContTwIcon = styled(BtnSocialMedia)`
-    order: 2;
-`
-const ContGoogleIcon = styled(BtnSocialMedia)`
-    order: 1;
+    padding: 2%;
 `
 // * * Style profile head
 const ProfileHead = styled("div")`
@@ -228,7 +198,6 @@ const BtnProfileMssage = styled("button")`
     flex-grow: 0;
     margin: 0px 6px;
     border: 0;
-
 `
 
 const LinkProfileMessage = styled("div")`
@@ -370,7 +339,7 @@ const Email = styled("div")`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
 
     order: 2;
     align-self: stretch;
@@ -387,8 +356,6 @@ const TextSocialMedia = styled("p")`
 
     color: #8083a3;
 
-    order: 0;
-    flex-grow: 1;
     margin: 0px 34px;
 `
 // frame Email Text
@@ -400,7 +367,6 @@ const FrameEmailText = styled("div")`
     order: 1;
     align-self: stretch;
     flex-grow: 1;
-    margin: 0px 158.5px;
 `
 // text Email
 const TextEmail = styled("p")`
@@ -417,10 +383,7 @@ const TextEmail = styled("p")`
     flex-grow: 0;
     margin: 5px 0px;
 `
-const TextinFrameEmail1 = styled(TextEmail)``
-const TextinFrameEmail2 = styled(TextEmail)`
-    order: 1;
-`
+
 // * * Dial frame
 const Dial = styled("div")`
     display: flex;
@@ -448,7 +411,7 @@ const Phone = styled("div")`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
 
     order: 5;
     align-self: stretch;
@@ -458,7 +421,6 @@ const Phone = styled("div")`
 const Social = styled("div")`
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
     order: 6;
     align-self: stretch;

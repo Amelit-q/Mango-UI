@@ -4,10 +4,11 @@ import {Sidebar} from "../../src/components/Sidebar/Sidebar"
 import styled from "styled-components"
 
 export const Contacts: React.FunctionComponent = () => {
+
     return (
         <Container>
             <Sidebar />
-            <ProfileCard />
+            <ProfileCard/>
         </Container>
     )
 }
