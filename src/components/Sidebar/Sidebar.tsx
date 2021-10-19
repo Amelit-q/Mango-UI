@@ -10,18 +10,15 @@ import {ReactComponent as Searchsvg} from "../../assets/imgNavbar/Searchicon.svg
 
 
 export const Sidebar = () => {
+
+    const ContactsIcon = [<Homesvg />, <Chatsvg />, <Callsvg />, <Contactsvg />, <Searchsvg />, <Optionsvg />]
+    const RenderMediaIcon = ContactsIcon.map((RenderIconMedia) => <Li><BtnCon> {RenderIconMedia} </BtnCon></Li>)
+
     return (
         <Container>
             <BtnBox>
                 <Logo><Homesvg /></Logo>
-                <Ul>
-                    <Li><BtnCon><Homesvg /></BtnCon></Li>
-                    <Li><BtnCon><Chatsvg /></BtnCon></Li>
-                    <Li><BtnCon><Callsvg /></BtnCon></Li>
-                    <Li><BtnCon><Contactsvg /></BtnCon></Li>
-                    <Li><BtnCon><Searchsvg /></BtnCon></Li>
-                    <Li><BtnCon><Optionsvg /></BtnCon></Li>
-                </Ul>
+                <Ul>{RenderMediaIcon}</Ul>
             </BtnBox>
         </Container>
 
@@ -58,7 +55,6 @@ const Container = styled("div")`
   flex-direction: column;
   box-sizing: border-box;
 `
-
 const BtnBox = styled("div")`
   height: 100vh;
   display: flex;
