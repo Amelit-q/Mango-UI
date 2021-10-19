@@ -11,70 +11,62 @@ import {ReactComponent as Searchsvg} from "../../assets/imgNavbar/Searchicon.svg
 
 export const Sidebar = () => {
     return (
-        <Wrapper>
-            <Container>
-                <Logo>
-                    <Homesvg/>
-                </Logo>
-                <BtnBox>
-                    <Ul>
-                        <Homesvg />
-                    </Ul>
-                    <Ul>
-                        <Chatsvg />
-                    </Ul>
-                    <Ul>
-                        <Callsvg />
-                    </Ul>
-                    <Ul>
-                        <Contactsvg />
-                    </Ul>
-                    <Ul>
-                        <Searchsvg />
-                    </Ul>
-                    <Ul>
-                        <Optionsvg/>
-                    </Ul>
-                </BtnBox>
-            </Container>
-            <Footer></Footer>
-        </Wrapper>
+        <Container>
+            <BtnBox>
+                <Logo><Homesvg /></Logo>
+                <Ul>
+                    <Li><BtnCon><Homesvg /></BtnCon></Li>
+                    <Li><BtnCon><Chatsvg /></BtnCon></Li>
+                    <Li><BtnCon><Callsvg /></BtnCon></Li>
+                    <Li><BtnCon><Contactsvg /></BtnCon></Li>
+                    <Li><BtnCon><Searchsvg /></BtnCon></Li>
+                    <Li><BtnCon><Optionsvg /></BtnCon></Li>
+                </Ul>
+            </BtnBox>
+        </Container>
+
+
     )
 
 }
-
-
-const Footer = styled("div")`
-  flex: 1 0 auto;
-  display: flex;
-`
 const Logo = styled("div")`
-  display: flex;
-  margin: 0 0 144px 0;
+  box-sizing: border-box;
+  text-align: center;
+`
+const BtnCon = styled("div")`
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+  box-sizing: border-box;
+`
+const Li = styled("li")`
+  box-sizing: border-box;
 `
 const Ul = styled("ul")`
-  display: flex;
-  padding-left: 0;
+  justify-content: center;
   flex-direction: column;
-  padding-bottom: 80px;
-  margin: 0;
-`
-const BtnBox = styled("div")`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
   flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  box-sizing: border-box;
 `
 const Container = styled("div")`
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 15px 15px;
-  width: 84px;
-  min-height: 100%;
-  flex: 1 0 auto;
+  box-sizing: border-box;
 `
-const Wrapper = styled("div")`
-  max-width: 100%;
-  margin: 0px auto;
+
+const BtnBox = styled("div")`
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  order: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 5rem;
+  text-align: center;
 `
