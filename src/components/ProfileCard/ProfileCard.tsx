@@ -4,23 +4,21 @@ import {ReactComponent as GoogleIcon} from "../../assets/imgCardProfile/googleIc
 import {ReactComponent as PinIcon} from "../../assets/imgCardProfile/pinIcon.svg"
 import {ReactComponent as TwIcon} from "../../assets/imgCardProfile/twIcon.svg"
 import {ReactComponent as Inicon} from "../../assets/imgCardProfile/inicon.svg"
-import {ReactComponent as Iconbtnmore} from "../../assets/imgCardProfile/Iconbtnmore.svg"
+import {ReactComponent as IconButtonmore} from "../../assets/imgCardProfile/IconButtonmore.svg"
 import {ReactComponent as PhoneIcon} from "../../assets/imgCardProfile/PhoneIcon.svg"
 import {ReactComponent as ShareIcon} from "../../assets/imgCardProfile/ShareIcon.svg"
 import {ReactComponent as ProfileLogo} from "../../assets/imgCardProfile/ProfileLogo.svg"
 import {ReactComponent as MessageIcon} from "../../assets/imgCardProfile/MessageIcon.svg"
 
 export const ProfileCard = () => {
-    // * Render Icon Media
-    const ContactsIcon = [<GoogleIcon />, <PinIcon />, <TwIcon />, <Inicon />]
-    const RenderMediaIcon = ContactsIcon.map((RenderIconMedia) => <BtnSocialMedia> {RenderIconMedia} </BtnSocialMedia>)
-    // * Render User Phone Number
-    const UserPhoneNumber = ["0 991-123329", "0 222-123329"]
-    const RenderUserPhoneNumber = UserPhoneNumber.map((RenderUserPhoneNumber) => <FrameTextPhone>{RenderUserPhoneNumber} </FrameTextPhone>)
-    // * Render User Email
-    const UserEmail = ["johanna.stevens@gmail.com", "johanna.stevens@whiteui.store"]
-    const RenderUserEmail = UserEmail.map((RenderUserEmail) => <TextEmail>{RenderUserEmail} </TextEmail>)
-
+    // *  Icon Media
+    const contactIcons = [<GoogleIcon />, <PinIcon />, <TwIcon />, <Inicon />]
+    // *  User Phone Number
+    const userPhoneNumber = ["0 991-123329", "0 222-123329"]
+    // *  User Email
+    const userEmail = ["johanna.stevens@gmail.com", "johanna.stevens@whiteui.store"]
+    // *  Head Icon Phone, Share, More
+    const iconHeadProfile = [<ShareIcon />, <IconButtonmore />, <PhoneIcon />]
     return (
         <CardProfile>
             <ProfileHead>
@@ -30,32 +28,20 @@ export const ProfileCard = () => {
                 <ProfileTitle>
                     <TitleProfile>Johanna Stevens</TitleProfile>
                     <BodyProfesion> UI/UX Designer</BodyProfesion>
-                    <FrameProfileTitle>
-                        <BtnProfileMssage>
-                            <LinkProfileMessage>
-                                <TextButtonProfileMessage>Message</TextButtonProfileMessage>
-                                <ContainerMessageIcon>
-                                    <MessageIcon />
-                                </ContainerMessageIcon>
-                            </LinkProfileMessage>
-                        </BtnProfileMssage>
-                    </FrameProfileTitle>
+                    <LinkProfileMessage>
+                        <ContainerMessageIcon>
+                            <MessageIcon />
+                        </ContainerMessageIcon>
+                        <HeadProfileText>
+                            <TextButtonProfileMessage>Message</TextButtonProfileMessage>
+                        </HeadProfileText>
+                    </LinkProfileMessage>
                 </ProfileTitle>
-                <ShareBtn>
-                    <ShareBtnLink>
-                        <ShareIcon />
-                    </ShareBtnLink>
-                </ShareBtn>
-                <BtmMore>
-                    <MoreIconDiv>
-                        <Iconbtnmore />
-                    </MoreIconDiv>
-                </BtmMore>
-                <BtnPhone>
-                    <MoreBtnPhone>
-                        <PhoneIcon />
-                    </MoreBtnPhone>
-                </BtnPhone>
+                {iconHeadProfile.map((RenderProfileIcon) => (
+                    <HeadButtonProfile>
+                        <ButtonHeadProfile>{RenderProfileIcon}</ButtonHeadProfile>
+                    </HeadButtonProfile>
+                ))}
             </ProfileHead>
             <Bio>
                 <FrameBio>
@@ -64,78 +50,93 @@ export const ProfileCard = () => {
             </Bio>
             <Email>
                 <ContainerTextSocial>
-                    <TextSocialMedia> Email </TextSocialMedia>
+                    <TextSocilaMedia> Email </TextSocilaMedia>
                 </ContainerTextSocial>
-                <FrameEmailText>{RenderUserEmail}</FrameEmailText>
+                <FrameEmailText>
+                    {userEmail.map((RenderUserEmail) => (
+                        <TextEmail>{RenderUserEmail} </TextEmail>
+                    ))}
+                </FrameEmailText>
             </Email>
             <Dial>
-                <TextSocialMedia> Dial </TextSocialMedia>
+                <TextSocilaMedia> Dial </TextSocilaMedia>
                 <TextDialMedia>j.stevens@ymsg.com</TextDialMedia>
             </Dial>
             <Meeting>
                 <ContainerTextSocial>
-                    <TextSocialMedia> Meeting </TextSocialMedia>{" "}
+                    <TextSocilaMedia> Meeting </TextSocilaMedia>{" "}
                 </ContainerTextSocial>
 
                 <TextDialMedia>http://go.betacall.com/meet/j.stevens</TextDialMedia>
             </Meeting>
             <Phone>
-                <FrameBlockPhone>{RenderUserPhoneNumber}</FrameBlockPhone>
+                <FrameBlockPhone>
+                    {userPhoneNumber.map((RenderUserPhoneNumber) => (
+                        <FrameTextPhone>{RenderUserPhoneNumber} </FrameTextPhone>
+                    ))}
+                </FrameBlockPhone>
                 <ContainerTextSocial>
-                    <TextSocialMedia> Phone </TextSocialMedia>
+                    <TextSocilaMedia> Phone </TextSocilaMedia>
                 </ContainerTextSocial>
             </Phone>
             <Social>
                 <ContainerTextSocial>
-                    <TextSocialMedia> Social </TextSocialMedia>
+                    <TextSocilaMedia> Social </TextSocilaMedia>
                 </ContainerTextSocial>
-                {RenderMediaIcon}
+                {contactIcons.map((RenderIconMedia) => (
+                    <ButtonSocialMedia> {RenderIconMedia} </ButtonSocialMedia>
+                ))}
             </Social>
         </CardProfile>
     )
 }
-const ContainerTextSocial = styled("div")``
+const HeadProfileText = styled("div")`
+    align-self: center;
+    order: 0;
+    margin: 0 0.4rem;
+`
+const DisplayFlexDirectionRow = styled("div")`
+    display: flex;
+    flex-direction: row;
+    margin: 0.9em 0;
 
+`
+const ContainerTextSocial = styled("div")``
 const TextDialMedia = styled("div")`
-    font-size: 14px;
+    font-size: 0.9em;
     color: #1a1c1d;
     order: 1;
     flex-grow: 1;
 `
 const FrameTextPhone = styled("p")`
-    font-size: 14px;
+    font-size: 0.9em;
     color: #1a1c1d
     order: 0;
     align-self: stretch;
-    flex-grow: 0;
-    margin: 5px 0px;
+    margin: 0;
 `
 
 const FrameBlockPhone = styled("div")`
     display: flex;
     flex-direction: column;
-    align-items: center;
     order: 1;
     align-self: stretch;
     flex-grow: 1;
-    padding: 5px;
+    padding: 1em;
 `
 
-const BtnSocialMedia = styled("div")`
+const ButtonSocialMedia = styled("div")`
     background: #ffffff;
     border: 1px solid #eceef5;
     box-sizing: border-box;
     border-radius: 10px;
 
     align-self: center;
-    flex-grow: 0;
-    margin: 0px 5px;
+    margin: 0 2%;
     padding: 2%;
 `
 // * * Style profile head
-const ProfileHead = styled("div")`
-    display: flex;
-    flex-direction: row;
+const ProfileHead = styled(DisplayFlexDirectionRow)`
     justify-content: space-between;
     align-items: flex-end;
     order: 0;
@@ -143,12 +144,12 @@ const ProfileHead = styled("div")`
     flex-grow: 0;
 `
 const ProfileLogoDiv = styled("div")`
-    width: 114px;
-    height: 114px;
+    width: 7em;
+    height: 7em;
     order: 0;
     align-self: center;
     flex-grow: 0;
-    margin: 0px 12.3333px;
+    margin: 0 5%;
 `
 const ProfileTitle = styled("div")`
     display: flex;
@@ -158,144 +159,71 @@ const ProfileTitle = styled("div")`
     order: 1;
     align-self: stretch;
     flex-grow: 0;
-    margin: 0px 12.3333px;
+    margin: 0;
 `
 
 const TitleProfile = styled("p")`
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.5em;
     order: 0;
     align-self: stretch;
     flex-grow: 0;
-    margin: 11px 0px;
+    margin: 0;
 `
 const BodyProfesion = styled("p")`
-    font-size: 14px;
-    line-height: 21px;
+    font-size: 1em;
     color: #8083a3;
     order: 1;
-    align-self: stretch;
-    flex-grow: 0;
-    margin: 5px 0px;
+    margin: 1rem 0;
 `
 
-const FrameProfileTitle = styled("div")`
+const LinkProfileMessage = styled("button")`
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    order: 2;
+    order: 0;
     align-self: stretch;
     flex-grow: 0;
-    margin: 11px 0px;
-`
-
-const BtnProfileMssage = styled("button")`
+    padding: 2%;
     background: #6b59cc;
     border-radius: 10px;
-    order: 0;
-    align-self: center;
-    flex-grow: 0;
-    margin: 0px 6px;
+    order: 2;
+    align-self: initial;
+    margin: 0;
     border: 0;
 `
 
-const LinkProfileMessage = styled("div")`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 2px;
-`
-
-const TextButtonProfileMessage = styled("div")`
-    height: 19px;
+const TextButtonProfileMessage = styled("p")`
     font-family: system-ui;
-    font-style: normal;
     font-weight: bold;
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 1.2em;
     color: #ffffff;
-    order: 1;
-    flex-grow: 0;
-    margin: 0px 6px;
-    padding: 2px;
+    margin: 0.4rem;
 `
 
 const ContainerMessageIcon = styled("div")`
-    width: 18px;
-    height: 18px;
-    font-family: Material Icons;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 18px;
-
-    text-align: center;
-
+    align-self: center;
+    width: 1.2em;
+    height: 1.2em;
     color: #fafbff;
     order: 0;
-    flex-grow: 0;
-    margin: 0px 6px;
+    margin: 0 0.4rem;
 `
-// * * Btn Profile head Share
+// * * Button Profile head Share
 // Button share
-const ShareBtn = styled("div")`
+const BorderButtonHead = styled("div")`
     border: 1px solid #eceef5;
     box-sizing: border-box;
     border-radius: 10px;
-
-    order: 4;
-    align-self: center;
-    flex-grow: 0;
-    padding: 1.2%;
 `
-
-const ShareBtnLink = styled("div")`
-    order: 2;
-    flex-grow: 0;
-    margin: 0px 12.3333px;
-`
+const ButtonHeadProfile = styled("div")``
 // Button more
-const BtmMore = styled("div")`
-    border: 1px solid #eceef5;
-    box-sizing: border-box;
-    border-radius: 10px;
-
+const HeadButtonProfile = styled(BorderButtonHead)`
+    display: flex;
     order: 4;
     align-self: center;
     flex-grow: 0;
-    margin: 0px 12.3333px;
-    padding: 1.5%;
-`
-const MoreIconDiv = styled("div")`
-    font-family: Material Icons;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 18px;
-    text-align: center;
-    color: #8083a3;
-`
-// Button Phone
-const BtnPhone = styled("div")`
-    border: 1px solid #eceef5;
-    box-sizing: border-box;
-    border-radius: 10px;
-    order: 3;
-    align-self: center;
-    flex-grow: 0;
-    margin: 0px 12.3333px;
-    padding: 1.5%;
-`
-const MoreBtnPhone = styled("div")`
-    font-family: Material Icons;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 18px;
-    text-align: center;
-    color: #8083a3;
-    padding: 0.9%;
+    margin: 0 2%;
+    padding: 1.8%;
 `
 // * * Bio frame
 const Bio = styled("div")`
@@ -303,129 +231,93 @@ const Bio = styled("div")`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 67px;
+    height: 3em;
     order: 1;
     align-self: stretch;
-    margin: 15px 0px;
+    margin: 1em 0;
 `
 // bio container
-const FrameBio = styled("div")`
-    display: flex;
-    flex-direction: row;
+const FrameBio = styled(DisplayFlexDirectionRow)`
     justify-content: space-between;
     align-items: flex-start;
-
     order: 0;
     align-self: stretch;
     flex-grow: 0;
-    margin: 23px 0px;
+    margin: 1em 0;
 `
 // bio text
 const FrameBioText = styled("p")`
     font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 21px;
+    font-size: 1em;
+    line-height: 1.5em;
 
     color: #1a1c1d;
 
     order: 1;
     flex-grow: 0;
-    margin: 0px 35.8515px;
+    margin: 0 2em;
 `
 // * * Email line
-const Email = styled("div")`
-    display: flex;
-    flex-direction: row;
+const Email = styled(DisplayFlexDirectionRow)`
     justify-content: space-between;
     align-items: center;
-
     order: 2;
     align-self: stretch;
     flex-grow: 0;
-    margin: 15px 0px;
+    margin: 1em 0;
 `
 // text Email
-const TextSocialMedia = styled("p")`
+const TextSocilaMedia = styled("p")`
     font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 21px;
-
+    font-size: 1em;
+    line-height: 1.2em;
     color: #8083a3;
-
-    margin: 0px 34px;
+    margin: 0 2em;
 `
 // frame Email Text
 const FrameEmailText = styled("div")`
     display: flex;
     flex-direction: column;
     align-items: center;
-
     order: 1;
     align-self: stretch;
     flex-grow: 1;
 `
 // text Email
-const TextEmail = styled("p")`
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 21px;
-
-    color: #1a1c1d;
-
+const TextEmail = styled(TextSocilaMedia)`
+    color: #000;
     order: 0;
     align-self: stretch;
     flex-grow: 0;
-    margin: 5px 0px;
+    margin: 0.5em 0;
 `
-
 // * * Dial frame
-const Dial = styled("div")`
-    display: flex;
-    flex-direction: row;
+const Dial = styled(DisplayFlexDirectionRow)`
     justify-content: space-between;
     align-items: center;
-
     order: 3;
     align-self: stretch;
     flex-grow: 0;
-    margin: 15px 0px;
 `
-const Meeting = styled("div")`
-    display: flex;
-    flex-direction: row;
+const Meeting = styled(DisplayFlexDirectionRow)`
     justify-content: space-between;
     align-items: center;
-
     order: 4;
     align-self: stretch;
     flex-grow: 0;
-    margin: 15px 0px;
 `
-const Phone = styled("div")`
-    display: flex;
-    flex-direction: row;
+const Phone = styled(DisplayFlexDirectionRow)`
     justify-content: space-between;
     align-items: center;
-
     order: 5;
     align-self: stretch;
     flex-grow: 0;
-    margin: 15px 0px;
 `
-const Social = styled("div")`
-    display: flex;
-    flex-direction: row;
+const Social = styled(DisplayFlexDirectionRow)`
     align-items: center;
     order: 6;
     align-self: stretch;
     flex-grow: 0;
-    margin: 15px 0px;
 `
 const CardProfile = styled("div")`
     background-color: white;
